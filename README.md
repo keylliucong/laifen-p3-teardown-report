@@ -50,7 +50,8 @@
     ├── sources.csv     # 来源清单
     ├── open-questions.csv
     ├── quick-measure.csv  # 手机 6 项快速测量数据表
-    └── evidence-log.csv   # 照片 ↔ 部件 ↔ 观察
+    ├── evidence-log.csv   # 照片 ↔ 部件 ↔ 观察
+    └── fmea.csv          # 失效模式与 RPN（拆解引入 / 使用期）
 ```
 
 ## 本地查看
