@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>有色 yoose MINI 5 PRO 拆机研究报告 · YSFSW50-Z</title>
+<meta name="description" content="有色 yoose MINI 5 PRO（YSFSW50-Z）拆机前产品研究：五刀头、磁悬浮直线电机、15W 快充、双电芯、合规与拆机观察清单。">
+<style>
+  :root{--copper:#b45309;--copper-soft:#fef3e2;--ok:#15803d;--ok-soft:#e8f7ee;--media:#1d4ed8;--media-soft:#e8efff;--infer:#a16207;--infer-soft:#fdf3d7;--todo:#b91c1c;--todo-soft:#fde8e8;--radius:14px}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--background,#f7f5f2);color:var(--foreground,#1c1917);font-family:var(--font-sans,ui-sans-serif,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  a{color:var(--copper);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--copper) 35%,transparent)}
+  a:hover{color:#8a3f06}
+  h1,h2,h3{line-height:1.25;letter-spacing:-.01em}
+  h2{font-size:26px;margin:0 0 6px}
+  h3{font-size:17px;margin:22px 0 8px}
+  p{margin:8px 0}
+  small{color:var(--muted-foreground,#78716c)}
+  header.hero{border-bottom:1px solid var(--border,#e7e2dc);background:radial-gradient(900px 380px at 82% -10%,color-mix(in srgb,var(--copper) 16%,transparent),transparent 65%),linear-gradient(180deg,var(--card,#fffdfa),var(--background,#f7f5f2))}
+  .hero .wrap{padding:54px 22px 40px}
+  .kicker{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-foreground,#78716c);font-weight:600}
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 4px var(--copper-soft)}
+  .hero h1{font-size:clamp(30px,4.6vw,48px);margin:14px 0 10px;font-weight:800}
+  .hero h1 span{color:var(--copper)}
+  .lede{font-size:17px;max-width:760px;color:var(--muted-foreground,#57534e);margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .chip{font-size:12.5px;padding:5px 10px;border:1px solid var(--border,#e7e2dc);border-radius:999px;background:var(--card,#fff);color:var(--muted-foreground,#57534e)}
+  .chip b{color:var(--foreground,#1c1917);font-weight:650}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .metric{background:var(--card,#fff);border:1px solid var(--border,#e7e2dc);border-radius:var(--radius);padding:14px 16px}
+  .metric .n{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .metric .n small{font-size:12px;font-weight:600;color:var(--muted-foreground,#78716c);margin-left:3px}
+  .metric .l{font-size:12px;color:var(--muted-foreground,#78716c);margin-top:2px}
+  nav.toc{margin:30px 0 8px;padding:16px 18px;background:var(--card,#fff);border:1px solid var(--border,#e7e2dc);border-radius:var(--radius)}
+  nav.toc b{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-foreground,#78716c)}
+  nav.toc ol{margin:8px 0 0;padding-left:18px;columns:2;column-gap:32px;font-size:14px}
+  nav.toc li{margin:3px 0;break-inside:avoid}
+  nav.toc a{border:none}
+  section{padding:34px 0 8px;border-top:1px solid var(--border,#eee9e3)}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .sec-num{font-family:var(--font-mono,ui-monospace,monospace);font-size:12px;color:var(--copper);font-weight:700;letter-spacing:.08em}
+  .sub{color:var(--muted-foreground,#6b6560);font-size:14.5px;margin:0 0 14px}
+  .badge{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:5px;vertical-align:1px;white-space:nowrap}
+  .b-off{background:var(--ok-soft);color:var(--ok)}.b-med{background:var(--media-soft);color:var(--media)}.b-inf{background:var(--infer-soft);color:var(--infer)}.b-todo{background:var(--todo-soft);color:var(--todo)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:var(--card,#fff);border:1px solid var(--border,#e7e2dc);border-radius:var(--radius);padding:18px 20px}
+  .card h3{margin-top:0}
+  .card p:last-child{margin-bottom:0}
+  .callout{border-left:3px solid var(--copper);background:var(--copper-soft);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:14px 0}
+  .callout strong{color:#7c2d12}
+  .callout.blue{border-color:var(--media);background:var(--media-soft)}
+  .callout.blue strong{color:#1e3a8a}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;background:var(--card,#fff);border:1px solid var(--border,#e7e2dc);border-radius:10px;overflow:hidden}
+  th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border,#eee9e3)}
+  th{background:var(--muted,#f4f1ec);font-size:12px;letter-spacing:.04em;color:var(--muted-foreground,#57534e);font-weight:700;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.num{font-family:var(--font-mono,ui-monospace,monospace);font-size:13px;white-space:nowrap}
+  .tbl-wrap{overflow-x:auto}
+  .bom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+  .bom-item{border:1px solid var(--border,#e7e2dc);border-radius:10px;padding:10px 12px;background:var(--card,#fff)}
+  .bom-item b{display:block;font-size:13.5px}
+  .bom-item span{font-size:12px;color:var(--muted-foreground,#78716c)}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px}
+  .d-ok{background:var(--ok)}.d-inf{background:var(--infer)}.d-todo{background:var(--todo)}
+  figure{margin:16px 0;background:var(--card,#fff);border:1px solid var(--border,#e7e2dc);border-radius:var(--radius);padding:14px}
+  figure svg{display:block;width:100%;height:auto}
+  figcaption{font-size:12px;color:var(--muted-foreground,#78716c);margin-top:8px;text-align:center}
+  .repair{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center}
+  .score{font-size:56px;font-weight:800;line-height:1;color:var(--copper)}
+  .score small{font-size:16px;color:var(--muted-foreground,#78716c);font-weight:600}
+  .bar{height:10px;border-radius:99px;background:var(--muted,#eee9e3);overflow:hidden;margin:8px 0 4px}
+  .bar i{display:block;height:100%;width:30%;background:linear-gradient(90deg,#d97706,#b45309);border-radius:99px}
+  ul.tight{margin:8px 0;padding-left:20px}
+  ul.tight li{margin:5px 0}
+  ol.tight{margin:8px 0;padding-left:22px}
+  ol.tight li{margin:5px 0}
+  .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+  .q{border:1px solid var(--border,#e7e2dc);border-left:3px solid var(--todo);border-radius:10px;padding:12px 14px;background:var(--card,#fff)}
+  .q b{display:block;font-size:14px;margin-bottom:2px}
+  .q span{font-size:12.5px;color:var(--muted-foreground,#78716c)}
+  .photo-list{columns:2;column-gap:28px;font-size:13.5px}
+  .photo-list div{break-inside:avoid;margin:4px 0}
+  footer{margin-top:40px;border-top:1px solid var(--border,#e7e2dc);padding:26px 0 50px;font-size:12.5px;color:var(--muted-foreground,#78716c)}
+  footer b{color:var(--foreground,#1c1917)}
+  @media(max-width:820px){.metrics{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.bom{grid-template-columns:1fr 1fr}nav.toc ol{columns:1}.qgrid{grid-template-columns:1fr}.repair{grid-template-columns:1fr}.photo-list{columns:1}}
+  @media print{nav.toc{display:none}body{background:#fff}section{break-inside:avoid}}
+  @media (prefers-color-scheme:dark){:root{--copper:#f59e0b;--copper-soft:#3a2508;--ok:#4ade80;--ok-soft:#10281a;--media:#93b4ff;--media-soft:#101c36;--infer:#fbbf24;--infer-soft:#2e2409;--todo:#f87171;--todo-soft:#331414}.callout strong{color:#fdba74}.callout.blue strong{color:#bfdbfe}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap" style="padding:16px 22px 0"><a href="../" style="border:none;font-size:13px">← 剃须刀拆机调研</a></div>
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>Teardown Research · 非官方独立研究</div>
+    <h1>有色 MINI 5 PRO<br><span>拆机研究报告</span></h1>
+    <p class="lede">一台 117 g、五刀头、15W 快充的国产往复式。它把“小”和“猛”同时写进参数里：14,000 RPM 磁悬浮直线电机、0.05 mm 刀网、35 分钟充满。这些数字能不能对上？内部怎么塞进去？本报告给拆前预期、口径核对与取证清单。</p>
+    <div class="meta">
+      <span class="chip">型号 <b>YSFSW50-Z</b></span>
+      <span class="chip">样机 <b>电镀银 · 批次见机身</b></span>
+      <span class="chip">版本 <b>v0.1 研究版</b></span>
+      <span class="chip">更新 <b>2026-11-27</b></span>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="n">117<small>g</small></div><div class="l">约，62×39×52 mm</div></div>
+      <div class="metric"><div class="n">14,000<small>RPM</small></div><div class="l">厂商口径 ≈ 233 Hz</div></div>
+      <div class="metric"><div class="n">5<small>刀头</small></div><div class="l">4 Lockcut + 1 Precut</div></div>
+      <div class="metric"><div class="n">15<small>W</small></div><div class="l">5V⎓3A · 35 min 充满</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="toc">
+  <b>目录</b>
+  <ol>
+    <li><a href="#summary">摘要：五条结论</a></li>
+    <li><a href="#baseline">产品基线与口径冲突</a></li>
+    <li><a href="#structure">结构与 BOM</a></li>
+    <li><a href="#motor">磁悬浮电机与计数</a></li>
+    <li><a href="#blade">五刀头系统</a></li>
+    <li><a href="#power">15W 快充与双电芯</a></li>
+    <li><a href="#seal">密封与湿态充电</a></li>
+    <li><a href="#repair">可维修性与 FMEA</a></li>
+    <li><a href="#compliance">合规与专利</a></li>
+    <li><a href="#compare">竞品对照</a></li>
+    <li><a href="#checklist">拆机观察清单</a></li>
+    <li><a href="#gaps">资料缺口</a></li>
+    <li><a href="#sources">来源与版本</a></li>
+  </ol>
+</nav>
+
+<section id="summary">
+  <div class="sec-head"><span class="sec-num">00</span><h2>摘要：五条结论</h2></div>
+  <p class="sub">先给判断，再给依据。凡未实测的，一律标“推断/待确认”。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>1. 五刀头不是三刀头简单加宽</h3>
+      <p>4 个 Lockcut + 1 个 Precut，至少需要两组传动（4+1 或 3+2）。这是本机最该先确认的结构点，也决定刀头总成能不能整组换。<span class="badge b-inf">推断</span></p>
+    </div>
+    <div class="card">
+      <h3>2. 它是 MINI 5 的另一代电气方案</h3>
+      <p>包装 15W / 5V⎓3A / 35min / 420mAh×2；公开的 MINI 5 是 800mAh / 60min / 5W 级。不要把 W5 的拆解当 PRO。<span class="badge b-off">包装</span> <span class="badge b-med">媒体</span></p>
+    </div>
+    <div class="card">
+      <h3>3. “14,000 RPM”是借来的单位</h3>
+      <p>直线电机没有转轴，14,000 RPM 换算为 233 Hz。3,240,000 次/分钟与 12,000 CPM 不是同一量纲，不能直接说“270 倍”。<span class="badge b-inf">推断</span></p>
+    </div>
+    <div class="card">
+      <h3>4. 可维修性 3/10（推断）</h3>
+      <p>刀头是耗材；双电芯胶粘、五刀头托架、合金壳，开壳即失去 IPX7。与徕芬 P3 同级或略低。<span class="badge b-inf">推断</span></p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>一句话：</strong>这是一台“单电机高频 + 五刀头 + 双电芯快充 + 合金壳”的紧凑路线，和 P3 的“双电机 + 大电池 + 塑壳”不是同一套结构。四个硬缺口：几组传动、双电芯并/串、电机-主板焊/插、是否有无线充电线圈。
+  </div>
+</section>
+
+<section id="baseline">
+  <div class="sec-head"><span class="sec-num">01</span><h2>产品基线与口径冲突</h2></div>
+  <p class="sub">以包装与实物铭牌为准；公开页只作对照。电池与充电存在三套口径，先并列，不取平均。</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>项目</th><th>值</th><th>证据</th></tr></thead>
+    <tbody>
+      <tr><td>型号 / 颜色</td><td>YSFSW50-Z，电镀银（另有午夜蓝、暗夜黑、亚麻白、克莱因蓝、巨蟒绿、竞速黄）</td><td><span class="badge b-off">包装</span> <span class="badge b-med">渠道</span></td></tr>
+      <tr><td>定位 / 价格</td><td>旗舰全合金往复式；官方 599 元，渠道活动价约 509–539 元</td><td><span class="badge b-med">媒体</span></td></tr>
+      <tr><td>尺寸 / 重量</td><td>62 × 39 × 52 mm；约 117 g（±6 g）</td><td><span class="badge b-off">官方</span></td></tr>
+      <tr><td>外壳</td><td>全合金机身，电镀/烤漆；磁吸刀头保护盖</td><td><span class="badge b-off">官方</span></td></tr>
+      <tr><td>刀头</td><td>5 刀头：4 Lockcut + 1 Precut 梳齿；0.05 mm 刀网；45° 逆角；约 14 cm²</td><td><span class="badge b-off">官方</span></td></tr>
+      <tr><td>电机</td><td>磁悬浮高速直线电机，14,000 RPM；3,240,000 次/分钟</td><td><span class="badge b-off">官方</span></td></tr>
+      <tr><td>电池</td><td>420 mAh × 2（约 840 mAh / 3.11 Wh）</td><td><span class="badge b-off">包装</span></td></tr>
+      <tr><td>充电</td><td>Type-C，5V⎓3A / 15W，约 35 min</td><td><span class="badge b-off">包装</span></td></tr>
+      <tr><td>续航</td><td>约 90 min</td><td><span class="badge b-off">官方</span></td></tr>
+      <tr><td>防护 / 标准</td><td>IPX7；GB/T 4706.1-2024、GB/T 4706.9-2024</td><td><span class="badge b-off">包装</span></td></tr>
+      <tr><td>制造</td><td>深圳市加减生活科技有限公司；产地深圳南山</td><td><span class="badge b-off">包装</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>电池 / 充电三套口径</h3>
+      <ul class="tight">
+        <li><b>包装（本机）</b>：420 mAh × 2，35 min，15W</li>
+        <li><b>海外官方（MINI 5）</b>：800 mAh，60 min，约 5W</li>
+        <li><b>香港渠道（MINI 5）</b>：900 mAh，7 h，约 180 g</li>
+      </ul>
+      <p><small>三者不是同一 SKU 的口径。报告按包装写，拆机以电芯丝印定案。</small></p>
+    </div>
+    <div class="card">
+      <h3>“无线充电”要不要算</h3>
+      <p>有媒体稿称 MINI 5 PRO 支持无线充电；但包装内容只列 Type-C 数据线，没有无线充底座。<span class="badge b-todo">待确认</span> 拆机时看底盖内是否有线圈与隔磁片，是决定底盖厚度与密封的第五个未知。</p>
+    </div>
+  </div>
+</section>
+
+<section id="structure">
+  <div class="sec-head"><span class="sec-num">02</span><h2>结构与 BOM</h2></div>
+  <p class="sub">9 个一级件、约 30 个二级件，其中 11 项必须本机确认。绿色=可见/官方，琥珀=推断，红色=待拆。</p>
+
+  <figure>
+    <svg viewBox="0 0 960 430" role="img" aria-label="MINI 5 PRO 结构分层：五刀头、压板、机芯、双电芯、PCBA、Type-C">
+      <g font-family="ui-sans-serif,-apple-system,'PingFang SC',sans-serif">
+        <rect x="40" y="22" width="880" height="82" rx="12" fill="var(--card,#fff)" stroke="var(--border,#ddd)" stroke-width="1.4"/>
+        <text x="60" y="48" font-size="14" font-weight="700" fill="var(--foreground,#1c1917)">① 五刀头总成（磁吸，耗材）</text>
+        <text x="60" y="70" font-size="12" fill="var(--muted-foreground,#6b6560)">4 × Lockcut 短须 + 1 × Precut 梳齿 · 0.05 mm 网 · 45° 逆角</text>
+        <g>
+          <rect x="620" y="38" width="34" height="46" rx="6" fill="none" stroke="#15803d" stroke-width="1.6"/><text x="629" y="66" font-size="10" fill="#15803d">L</text>
+          <rect x="660" y="38" width="34" height="46" rx="6" fill="none" stroke="#15803d" stroke-width="1.6"/><text x="669" y="66" font-size="10" fill="#15803d">L</text>
+          <rect x="700" y="38" width="34" height="46" rx="6" fill="none" stroke="#15803d" stroke-width="1.6"/><text x="709" y="66" font-size="10" fill="#15803d">L</text>
+          <rect x="740" y="38" width="34" height="46" rx="6" fill="none" stroke="#15803d" stroke-width="1.6"/><text x="749" y="66" font-size="10" fill="#15803d">L</text>
+          <rect x="780" y="38" width="34" height="46" rx="6" fill="none" stroke="#b45309" stroke-width="1.8"/><text x="789" y="66" font-size="10" fill="#b45309">P</text>
+        </g>
+        <text x="828" y="66" font-size="11" fill="var(--muted-foreground,#6b6560)">4+1</text>
+
+        <rect x="40" y="116" width="880" height="64" rx="12" fill="var(--card,#fff)" stroke="var(--border,#ddd)" stroke-width="1.4"/>
+        <text x="60" y="142" font-size="14" font-weight="700" fill="var(--foreground,#1c1917)">② 前盖 / 压板 / 密封</text>
+        <text x="60" y="164" font-size="12" fill="var(--muted-foreground,#6b6560)">合金前盖 · 压板螺丝 · 输出轴密封圈 · 前盖-中框密封（推断）</text>
+
+        <rect x="40" y="192" width="880" height="76" rx="12" fill="var(--card,#fff)" stroke="var(--border,#ddd)" stroke-width="1.4"/>
+        <text x="60" y="218" font-size="14" font-weight="700" fill="var(--foreground,#1c1917)">③ 机芯：磁悬浮直线电机 + 传动</text>
+        <text x="60" y="240" font-size="12" fill="var(--muted-foreground,#6b6560)">14,000 RPM 口径 ≈ 233 Hz · 五刀头至少两组传动 · 减振悬挂</text>
+        <rect x="650" y="210" width="120" height="40" rx="8" fill="var(--copper-soft,#fef3e2)" stroke="var(--copper,#b45309)" stroke-width="1.5"/>
+        <text x="666" y="235" font-size="11" fill="var(--copper,#b45309)">Linear Motor</text>
+
+        <rect x="40" y="280" width="420" height="70" rx="12" fill="var(--card,#fff)" stroke="var(--border,#ddd)" stroke-width="1.4"/>
+        <text x="60" y="306" font-size="14" font-weight="700" fill="var(--foreground,#1c1917)">④ PCBA</text>
+        <text x="60" y="328" font-size="12" fill="var(--muted-foreground,#6b6560)">MCU · 电机驱动（几颗？）· 15W 充电管理 · 电量显示</text>
+
+        <rect x="480" y="280" width="440" height="70" rx="12" fill="var(--card,#fff)" stroke="var(--border,#ddd)" stroke-width="1.4"/>
+        <text x="500" y="306" font-size="14" font-weight="700" fill="var(--foreground,#1c1917)">⑤ 双电芯 420 mAh × 2</text>
+        <text x="500" y="328" font-size="12" fill="var(--muted-foreground,#6b6560)">并/串待确认 · 保护板 · 胶粘 + 极耳点焊（推断）</text>
+
+        <rect x="40" y="366" width="880" height="44" rx="10" fill="var(--copper-soft,#fef3e2)" stroke="var(--copper,#b45309)" stroke-width="1.2"/>
+        <text x="60" y="392" font-size="12.5" font-weight="700" fill="var(--copper,#b45309)">⑥ 密封与附件：前盖/压板/底盖密封 · Type-C 口密封 · 磁吸保护盖 · 旅行锁</text>
+      </g>
+    </svg>
+    <figcaption>结构分层示意（研究版）。五刀头的传动组数、双电芯串并联、是否有无线充电线圈，是三个决定性未知。</figcaption>
+  </figure>
+
+  <div class="bom">
+    <div class="bom-item"><b><span class="dot d-ok"></span>五刀头总成</b><span>4 短须 + 1 长须 + 托架/磁铁</span></div>
+    <div class="bom-item"><b><span class="dot d-ok"></span>合金前盖/中框</b><span>全合金，电镀/烤漆</span></div>
+    <div class="bom-item"><b><span class="dot d-inf"></span>压板</b><span>螺丝 + 输出轴密封</span></div>
+    <div class="bom-item"><b><span class="dot d-inf"></span>机芯</b><span>磁悬浮直线电机 + 传动</span></div>
+    <div class="bom-item"><b><span class="dot d-inf"></span>PCBA</b><span>主控/驱动/15W 充电</span></div>
+    <div class="bom-item"><b><span class="dot d-todo"></span>双电芯</b><span>420mAh×2；并/串待确认</span></div>
+    <div class="bom-item"><b><span class="dot d-inf"></span>Type-C 小板</b><span>插座 + 密封</span></div>
+    <div class="bom-item"><b><span class="dot d-inf"></span>密封/减振</b><span>O 圈、轴封、泡棉</span></div>
+    <div class="bom-item"><b><span class="dot d-ok"></span>按键/指示</b><span>侧键 + 旅行锁 + 电量灯</span></div>
+  </div>
+
+  <details class="card">
+    <summary style="cursor:pointer;font-weight:700">展开 BOM 树（二级件，节选）</summary>
+    <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>一级</th><th>二级件</th><th>状态</th><th>依据 / 未知点</th></tr></thead>
+      <tbody>
+        <tr><td>五刀头</td><td>外刀网 0.05 mm（六边形孔）</td><td><span class="badge b-off">官方</span></td><td>孔型/开孔率/毛刺方向未公开</td></tr>
+        <tr><td>五刀头</td><td>内刃 + 托架 + 弹簧</td><td><span class="badge b-inf">推断</span></td><td>5 组浮动是否独立待确认</td></tr>
+        <tr><td>五刀头</td><td>Precut 梳齿刀</td><td><span class="badge b-off">官方</span></td><td>与 4 短须同组还是独立</td></tr>
+        <tr><td>机芯</td><td>磁悬浮直线电机</td><td><span class="badge b-off">官方</span></td><td>“磁悬浮”是磁力平衡+导向还是弹片混用</td></tr>
+        <tr><td>机芯</td><td>五刀头传动（几组）</td><td><span class="badge b-todo">待确认</span></td><td>1 电机 5 路 / 2 组 / 2 电机</td></tr>
+        <tr><td>PCBA</td><td>主控 MCU</td><td><span class="badge b-todo">待确认</span></td><td>丝印</td></tr>
+        <tr><td>PCBA</td><td>电机驱动 IC</td><td><span class="badge b-todo">待确认</span></td><td>几颗决定传动组数</td></tr>
+        <tr><td>PCBA</td><td>15W 充电管理</td><td><span class="badge b-inf">推断</span></td><td>3A 通路、协议、温控</td></tr>
+        <tr><td>电池</td><td>电芯 ×2 420mAh</td><td><span class="badge b-off">包装</span></td><td>型号/厂家/并串待确认</td></tr>
+        <tr><td>电池</td><td>保护板</td><td><span class="badge b-inf">推断</span></td><td>1 块还是 2 块</td></tr>
+        <tr><td>密封</td><td>前盖/压板/底盖密封</td><td><span class="badge b-inf">推断</span></td><td>截面/材质/压缩量</td></tr>
+        <tr><td>附件</td><td>无线充电线圈（若有）</td><td><span class="badge b-todo">待确认</span></td><td>底盖厚度与密封的第五未知</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </details>
+</section>
+
+<section id="motor">
+  <div class="sec-head"><span class="sec-num">03</span><h2>磁悬浮电机与计数</h2></div>
+  <p class="sub">直线电机没有“转速”，14,000 RPM 是借旋转电机的单位给消费者一个熟悉的数量级。换算成频率才有物理意义。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>14,000 RPM ≈ 233 Hz</h3>
+      <p class="num">14,000 ÷ 60 = 233.3 Hz</p>
+      <p>对照徕芬 P3 的 200 Hz（12,000 CPM），yoose 高约 17%，属于同一档，不是数量级差异。<span class="badge b-inf">推断</span></p>
+      <p>拆前判读：刀头座加速度主峰应落在 <b>233 ± 10 Hz</b>；若主峰在 117 Hz，说明“14,000”按单程计数。</p>
+    </div>
+    <div class="card">
+      <h3>3,240,000 次/分钟：能凑上，但不是厂商给的公式</h3>
+      <p>若按“频率 × 双程 × 每刀头齿数 × 刀头数”复原：</p>
+      <p class="num">233.3 × 2 × 23 × 5 × 60 ≈ 3,220,000</p>
+      <p>与 3,240,000 差 0.6%。取 23 齿、14,000 RPM 的取整误差内可以对上。<b>但厂商只给了两个数，没给公式</b>，报告只写“可复原”，不写“厂商定义”。</p>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <strong>不要这样比：</strong>把“3,240,000 次/分钟”和徕芬的“12,000 CPM”并列说“yoose 是 270 倍”。两者量纲不同：前者含刀头齿数，后者是往复次数。正确比法是都还原到频率——233 Hz vs 200 Hz，差 17%。
+  </div>
+
+  <h3>“磁悬浮”到底指什么</h3>
+  <p>官方称“磁悬浮高速直线电机”。拆机时看三处：①动子有没有导轨/衬套/柔性导向；②有没有金属或塑料弹片；③悬浮间隙是否 0.1–0.3 mm。若完全无接触导向，才是真磁悬浮；若有弹片，则是“磁铁 + 弹片”混用，宣传语要打折。<span class="badge b-todo">待确认</span></p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>#</th><th>拆前 / 拆到该步</th><th>看什么</th><th>预期</th><th>不符意味着什么</th></tr></thead>
+    <tbody>
+      <tr><td class="num">A1</td><td>整机通电、空载</td><td>加速度计贴刀头座/壳体，FFT</td><td>主峰 233 ± 10 Hz；壳体 ≤ 刀头座 1/5</td><td>主峰 117 Hz → 单程计数；壳体比 &gt;0.5 → 磁弹簧非线性或相位失衡</td></tr>
+      <tr><td class="num">A2</td><td>拆开前，手推刀架</td><td>卡尺量机械限位；慢动作拍 2 s</td><td>行程量级可记录（±0.5 mm）</td><td>五组刀头不同相 → 至少两组传动</td></tr>
+      <tr><td class="num">A3</td><td>满电空载</td><td>USB 功率计；运行电流</td><td>平均约 2.1 W（840mAh / 1.5h）</td><td>明显偏高 → 效率低或续航标称乐观</td></tr>
+      <tr><td class="num">A4</td><td>空载 / 贴皮肤</td><td>声级计 1 m，1/3 倍频程</td><td>233/466/700 Hz 窄带；60–70 dB(A)</td><td>主峰不在整数倍 → 另有激励源；宽频突出 → 摩擦/冲击</td></tr>
+      <tr><td class="num">B1</td><td>打开机身，露出动子</td><td>导轨/衬套/弹片/间隙</td><td>有导向 + 无弹片（磁弹簧）</td><td>有弹片 → “磁悬浮”是混用；完全无导向 → 真磁悬浮</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="blade">
+  <div class="sec-head"><span class="sec-num">04</span><h2>五刀头系统</h2></div>
+  <p class="sub">4 个 Lockcut 抓短须，1 个 Precut 梳齿先梳后切。五片刀网把“单片破裂”变成“五倍概率事件”，也是本机最脆的耗材。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>已知</h3>
+      <ul class="tight">
+        <li>4 × Lockcut 短须网 + 1 × Precut 梳齿网，约 14 cm²。<span class="badge b-off">官方</span></li>
+        <li>0.05 mm 超薄不锈钢刀网；六边形网孔。<span class="badge b-off">官方</span></li>
+        <li>45° 逆角设计；磁吸刀头，可整组取下清洗。<span class="badge b-off">官方</span></li>
+        <li>官方称 3,240,000 次/分钟切割。<span class="badge b-off">官方</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>未知</h3>
+      <ul class="tight">
+        <li>五刀头是几组传动：1 电机 5 路 / 1 电机 2 组 / 2 电机 2 组。<span class="badge b-todo">待确认</span></li>
+        <li>4 个短须是否同相；长须是否反相（减振）。</li>
+        <li>每组浮动是否独立，行程多少。</li>
+        <li>刀网孔距、开孔率、刃角、刃口半径。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>三种传动拓扑，拆机一眼能分</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>拓扑</th><th>现象</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td><b>A：1 电机 + 5 路连杆</b></td><td>只有 1 颗驱动 IC；连杆从一处分出</td><td>结构最简；长须与短须行程互相牵制，震感大</td></tr>
+      <tr><td><b>B：1 电机 + 2 组（4+1）</b></td><td>1 颗 IC，两条连杆</td><td>折中：短须同组、长须独立</td></tr>
+      <tr><td><b>C：2 电机 + 2 组</b></td><td>2 颗驱动 IC；两组反向</td><td>成本最高，震感最好；最符合“磁悬浮 + 低震”卖点</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><span class="badge b-inf">推断</span> 倾向 B 或 C：5 刀头 + 117 g 仍标低震感，单电机推五组负载偏大。拆机看驱动 IC 颗数与连杆数量即可定案。</p>
+
+  <div class="callout">
+    <strong>最脆的件：</strong>0.05 mm 刀网比徕芬 P3 的 55 µm 更薄，五片网任一凹陷/破裂都会刮脸。拆刀头时只吹气/软毛刷，不按压网面；跌落后逐片侧光检查。
+  </div>
+</section>
+
+<section id="power">
+  <div class="sec-head"><span class="sec-num">05</span><h2>15W 快充与双电芯</h2></div>
+  <p class="sub">这是本机与 P3 最大的电气差异：15W 对 840mAh 是 ~1.7C，35 分钟充满。先算自洽性，再看拆机。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>能量账</h3>
+      <p class="num">840 mAh × 3.7 V ≈ 3.11 Wh</p>
+      <p>35 min = 0.583 h；3.11 Wh ÷ 0.583 h ≈ <b>5.3 W</b> 入电池；按 85% 效率 ≈ <b>6.3 W</b> 输入。</p>
+      <p>所以 <b>15W 只能是峰值（CC 段）</b>，不可能是全程平均；实测平均输入落在 <b>4.5–7 W</b> 才算自洽。若全程真 15W，12.4 min 就充满了。</p>
+    </div>
+    <div class="card">
+      <h3>续航账</h3>
+      <p class="num">840 mAh ÷ 1.5 h = 560 mA ≈ 2.1 W</p>
+      <p>90 min 续航对应平均放电约 2.1 W。若实测运行功率远高于此，续航标称就偏乐观；远低于此，可能没在满载。</p>
+      <p><span class="badge b-inf">推断</span> 以上为量级核对，不是实测。</p>
+    </div>
+  </div>
+
+  <h3>双电芯：并还是串</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>连接</th><th>电压 / 容量</th><th>含义</th><th>拆机判据</th></tr></thead>
+    <tbody>
+      <tr><td>并联（最可能）</td><td>3.8 V / 840 mAh</td><td>无需升压，充电管理与老款同构；每颗 ~0.85C</td><td>两颗极耳并到同一焊盘；电池座 2 pin</td></tr>
+      <tr><td>串联</td><td>7.6 V / 420 mAh</td><td>电机电压高、电流小；充电要多一级转换</td><td>极耳首尾相接；电池座 3 pin（带中点）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>若为串联，维修时两颗必须同批次同容量更换，混用会导致中点失衡——这条要写进可维修性。</p>
+
+  <div class="callout">
+    <strong>快充是这台机器最“吃力”的工况：</strong>15W 在 117 g 小机身里散热面积有限，合金壳导热好但摸起来更烫。充电 10 min 的电池仓温度，比运行 5 min 的温升更值得测。
+  </div>
+</section>
+
+<section id="seal">
+  <div class="sec-head"><span class="sec-num">06</span><h2>密封与湿态充电</h2></div>
+  <p class="sub">IPX7 是“1 m / 30 min 浸水、无有害进水”，不等于“口内有水还能充”。15W/3A 把这个缺口放大了。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>密封点（推断）</h3>
+      <ul class="tight">
+        <li>前盖 / 刀头面与中框：最大开口，五刀头开窗。</li>
+        <li>压板与输出轴：多组传动，轴封数量随传动组数增加。</li>
+        <li>底盖与 Type-C 口：高频插拔面。</li>
+        <li>无线充电线圈窗（若有）：第五个未知。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>湿态充电为什么更危险</h3>
+      <ul class="tight">
+        <li><b>电解腐蚀</b>：口内残留水 + 5V/3A，腐蚀速率远高于 5V/1A。</li>
+        <li><b>局部发热</b>：接触电阻上升 → 发热 → 加速腐蚀，正反馈。</li>
+        <li><b>判据不覆盖</b>：IPX7 不考核“带水通电后的电气性能”。</li>
+        <li><b>金属壳</b>：水 + 金属 + 充电，接触电流与绝缘要额外看。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>报告口径：</strong>“IPX7 合格”只能推出“浸水后无有害进水”，推不出“湿手/湿口可充电”。说明书若没有明确禁止湿态充电，本身就是一条缺口。
+  </div>
+</section>
+
+<section id="repair">
+  <div class="sec-head"><span class="sec-num">07</span><h2>可维修性与 FMEA</h2></div>
+  <p class="sub">按 iFixit 10 分制；所有分数为推断，拆机后复核。</p>
+
+  <div class="card">
+    <div class="repair">
+      <div>
+        <div class="score">3<small>/10</small></div>
+        <div class="bar"><i></i></div>
+        <small>推断值 · 合金壳 + 五刀头 + 双电芯</small>
+      </div>
+      <div>
+        <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>维度</th><th>得分</th><th>依据</th></tr></thead>
+          <tbody>
+            <tr><td>进入机身</td><td class="num">2 / 3</td><td>刀头磁吸免工具；合金壳预计从底盖/刀头面进，螺丝未知</td></tr>
+            <tr><td>可换件可得性</td><td class="num">1 / 3</td><td>刀头可买；电芯、PCBA、电机、密封件不供件</td></tr>
+            <tr><td>工具与步骤</td><td class="num">0 / 2</td><td>精密批头 + 撬片；五刀头托架与双电芯增加步骤</td></tr>
+            <tr><td>复装 / 防水</td><td class="num">0 / 1</td><td>合金卡扣屈服不回弹；开壳即失去 IPX7</td></tr>
+            <tr><td>文档与诊断</td><td class="num">0 / 1</td><td>无维修手册、无调试口</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Top 失效模式</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>风险</th><th>后果 / 早期信号</th><th>RPN</th><th>处置</th></tr></thead>
+    <tbody>
+      <tr><td class="num">F7</td><td>磁悬浮结构 / 弹片疲劳</td><td>噪音变大、震感增强、动力下降；严重时动子撞定子卡死</td><td class="num"><b>147</b></td><td>新机录 1m dB(A) + 频谱基线；重摔后必查；不进粉尘</td></tr>
+      <tr><td class="num">F1</td><td>5 刀头磨损 / 变形</td><td>剃不净、拉扯、局部漏剃</td><td class="num"><b>144</b></td><td>按耗材换（12 个月或出现拉扯感）；每月查 5 组回弹</td></tr>
+      <tr><td class="num">F8</td><td>进液短路</td><td>电池热失控、整机报废</td><td class="num"><b>144</b></td><td>水洗后甩干竖放 2h；不泡水；跌落后查密封</td></tr>
+      <tr><td class="num">F5</td><td>Type-C 口腐蚀</td><td>充不进电、需掰角度</td><td class="num"><b>120</b></td><td>口朝下甩干 + 纸巾吸干；禁湿手插线</td></tr>
+      <tr><td class="num">F2</td><td>0.05 mm 刀网破裂</td><td>刮伤皮肤、刀头报废</td><td class="num"><b>112</b></td><td>禁按压网面；跌落后逐片侧光检查</td></tr>
+      <tr><td class="num">F4</td><td>15W 快充发热</td><td>充电烫手、降速、加速老化</td><td class="num"><b>108</b></td><td>用原装 5V/3A；不在被褥/口袋内充；充满即拔</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><small>完整 F1–F10 与 D1–D8 见 <span class="num">data/fmea.csv</span>；D 编号对应拆解不可逆动作。</small></p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>两条寿命线</h3>
+      <p>磁悬浮结构的洁净度（F7）与五片刀网的完好度（F1/F2）。都不是用户能直观看到的，早期只有噪音、拉扯感。</p>
+    </div>
+    <div class="card">
+      <h3>拆解红线</h3>
+      <p>合金卡扣屈服不回弹（D1）；五刀头托架相位装不回（D2）；双电芯胶粘、壁薄（D3）；密封圈拆一次即换（D4）。</p>
+    </div>
+  </div>
+</section>
+
+<section id="compliance">
+  <div class="sec-head"><span class="sec-num">08</span><h2>合规与专利</h2></div>
+  <p class="sub">与徕芬 P3 同一套安全标准，但 15W/3A 让温升、输入电流、充电回路的权重更高。证书层面仍停在“声明级”。</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>文件</th><th>范围 / 本机核对点</th></tr></thead>
+    <tbody>
+      <tr><td><b>GB/T 4706.1-2024</b></td><td>通用安全要求；2024-07-24 发布、2026-08-01 实施。重点：10 输入功率/电流、11 温升、13 泄漏电流与电气强度、15–16 耐潮湿、19 非正常、22 结构、25 电源连接、29 电气间隙。</td></tr>
+      <tr><td><b>GB/T 4706.9-2024</b></td><td>剃须刀专用要求；6.2 至少 IPX7；19.101 非正常；21.101 五方位 900 mm 跌落；22 结构（刀头固定/密封）；24.1.3 开关 6000 循环。</td></tr>
+      <tr><td><b>GB 44246-2024</b></td><td>家电安全强制规范，2026-08-01 实施；98 项 GB/T 4706 转为推荐性配套。包装标 4706 新版合规，要核 CCC 证书是否已换版。</td></tr>
+      <tr><td><b>GB/T 23132-2024</b></td><td>《电动剃须刀》性能标准，2025-02-01 实施；包装未标。刀网温升、噪声、锋利度的验收依据待原文。</td></tr>
+      <tr><td><b>IPX7</b></td><td>1 m / 30 min 浸水、无有害进水；包装只标等级不标条件。15W 下“湿态充电”是 IPX7 之外的缺口。</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>专利：只拿到一条线索</h3>
+      <p>深圳市加减生活科技有限公司（yoose 品牌，母公司佳简几何 XIVO DESIGN）名下约 97 条专利（二手），已见 <b>CN119399865A</b>「便携式剃须刀的解锁控制方法及剃须刀」。Google Patents 本轮 503，磁悬浮电机/五刀头/刀网的权项与法律状态未取。<span class="badge b-todo">权项未取</span></p>
+    </div>
+    <div class="card">
+      <h3>证书：没找到</h3>
+      <p>无 CCC 证书号、无 IPX7 检测报告、无说明书 PDF、无保修条款原文。电商页称 12 个月保固（二手）。报告只写“未找到”，不替厂商补。</p>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="sec-head"><span class="sec-num">09</span><h2>竞品对照</h2></div>
+  <p class="sub">同价位看路线，跨品牌看技术。价格为中国大陆公开价，查询日 2026-11-27。</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>机型</th><th>路线</th><th>刀头</th><th>重量</th><th>续航</th><th>价格</th><th>与本机的关系</th></tr></thead>
+    <tbody>
+      <tr><td><b>yoose MINI 5 PRO</b></td><td>磁悬浮直线，14,000 RPM</td><td>5（4+1）</td><td>约 117 g</td><td>约 90 min</td><td>599 元</td><td>本报告对象</td></tr>
+      <tr><td>徕芬 P3 标准版</td><td>双直线 L2，200 Hz</td><td>3（2+1）</td><td>187.1 g</td><td>约 90 min</td><td>599 元</td><td>同价位另一路线：双电机 + 大电池 + 塑壳</td></tr>
+      <tr><td>徕芬 P3 Pro</td><td>双直线 L2</td><td>3（2+1）</td><td>179 g</td><td>100 min</td><td>699–799 元</td><td>同动力平台，CNC 铝合金</td></tr>
+      <tr><td>松下 ES-LV67</td><td>直线往复，约 14,000 次/min</td><td>5</td><td>—</td><td>约 50 min</td><td>约 150 美元</td><td>五刀头直线路线，可直接对照行程/噪声</td></tr>
+      <tr><td>飞利浦 S7888/99</td><td>旋转式三头</td><td>3 旋转</td><td>—</td><td>约 60 min</td><td>约 1,149 元</td><td>旋转路线；振动/噪声/贴面逻辑不同</td></tr>
+      <tr><td>博朗 Series 3 3040s</td><td>三组浮动往复</td><td>3</td><td>—</td><td>约 45 min</td><td>约 284–369 元</td><td>入门往复，价格锚点</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="sec-head"><span class="sec-num">10</span><h2>拆机观察清单</h2></div>
+  <p class="sub">给拆机的人用：按顺序拆、按编号拍、按表记。不是拆解记录，是拆之前的动作表。</p>
+
+  <h3>先回答这四个问题</h3>
+  <div class="qgrid">
+    <div class="q"><b>① 五刀头是几组传动？</b><span>看连杆数量 + 驱动 IC 颗数 + 手动推刀头相位</span></div>
+    <div class="q"><b>② 双电芯并还是串？</b><span>看极耳焊盘、电池座 2 pin 还是 3 pin、保护板 1 块还是 2 块</span></div>
+    <div class="q"><b>③ 电机与主板焊还是插？</b><span>决定能不能换电机；微距拍端子</span></div>
+    <div class="q"><b>④ 有没有无线充电线圈？</b><span>底盖内是否有线圈 + 隔磁片；错位装回会导致充电效率骤降</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>工具与准备</h3>
+      <ul class="tight">
+        <li>PH00 / T5（备 T4/T6）；塑料撬片（金属会崩合金漆面）</li>
+        <li>防静电镊子、卡尺、千分尺（量 0.05 mm 网）、0.1 g 电子秤</li>
+        <li>异丙醇（溶电池胶）、耐热胶带、防火袋</li>
+        <li>放电至 30–50%；合金壳先探隐藏螺丝再撬</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>安全红线</h3>
+      <ul class="tight">
+        <li>双电芯壁薄，不刺穿、不弯折；撬片从长边进</li>
+        <li>合金卡扣屈服不回弹，别单点发力</li>
+        <li>刀网 0.05 mm，一按就凹；只吹气/软毛刷</li>
+        <li>磁铁旁只用陶瓷/塑料镊子；磁钢崩角会破坏悬浮平衡</li>
+        <li>拆 PCBA 前放静电；鼓包/异味立即停</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>必拍 / 必量 / 必记</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>组</th><th>内容</th><th>编号</th></tr></thead>
+    <tbody>
+      <tr><td>外观</td><td>四视图 + 铭牌 + 条码 + 认证标识</td><td class="num">Y01–Y04</td></tr>
+      <tr><td>五刀头</td><td>布局、长短须顺序、磁吸极性、能否互换</td><td class="num">Y05–Y09</td></tr>
+      <tr><td>刀头背面</td><td>传动连接、浮动/独立悬挂、弹簧原位</td><td class="num">Y10–Y13</td></tr>
+      <tr><td>拆壳</td><td>螺丝规格/数量、卡扣、防拆胶/焊点</td><td class="num">Y14–Y18</td></tr>
+      <tr><td>密封</td><td>密封圈位置/截面/压缩痕、Type-C 防水件</td><td class="num">Y19–Y21</td></tr>
+      <tr><td>双电芯</td><td>型号/容量/尺寸码、并串、保护板</td><td class="num">Y22–Y26</td></tr>
+      <tr><td>电机</td><td>定子/动子、磁钢排布、导轨/弹片/间隙</td><td class="num">Y27–Y31</td></tr>
+      <tr><td>PCBA</td><td>主控、驱动 IC（几颗）、15W 充电 IC、霍尔</td><td class="num">Y32–Y35</td></tr>
+      <tr><td>装配</td><td>定位/紧固/复装难点</td><td class="num">Y36–Y40</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>手机 6 项快速测量（12–15 分钟）</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>项</th><th>工具</th><th>怎么做</th><th>精度 / 降级</th></tr></thead>
+    <tbody>
+      <tr><td><b>空载频率</b></td><td>手机录音</td><td>10 cm 录 10 s × 3；FFT 找 200–260 Hz 主峰 × 60</td><td>±60 CPM；防多峰（466/699 Hz 谐波）</td></tr>
+      <tr><td><b>行程（量级）</b></td><td>慢动作 / 卡尺</td><td>慢动作拍 2 s；拆开后推刀架量限位</td><td>仅 ±0.5 mm</td></tr>
+      <tr><td><b>充电功率</b></td><td>USB-C 功率计</td><td>20% 起，记 1/10/30 min 与充满</td><td>无表标 vendor；平均应在 4.5–7 W</td></tr>
+      <tr><td><b>表面温升</b></td><td>热像 / 额温枪</td><td>运行 5 min + 充电 10 min 各测 4 点</td><td>±2–3 K；充电温升是重点</td></tr>
+      <tr><td><b>噪声</b></td><td>声级计 App</td><td>30 s 背景 + 1 m 前/侧/后各 10 s</td><td>±3 dB(A)，只横向比</td></tr>
+      <tr><td><b>刀网厚度</b></td><td>千分尺</td><td>无孔边缘 5 点，棘轮限力</td><td>卡尺不可用；无千分尺标 missing</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="gaps">
+  <div class="sec-head"><span class="sec-num">11</span><h2>资料缺口</h2></div>
+  <p class="sub">公开资料能回答“它大概怎么做的”，不能回答“这台具体怎么做的”。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>拆机可回答</h3>
+      <ol class="tight">
+        <li>五刀头几组传动、连杆/拨叉、相位。</li>
+        <li>双电芯并/串、电芯型号与保护板。</li>
+        <li>电机-主板焊/插；驱动 IC 颗数。</li>
+        <li>磁悬浮是真无接触导向还是弹片混用。</li>
+        <li>外壳固定方式（螺丝/卡扣/胶/CNC 一体）。</li>
+        <li>密封件数量/截面；是否有无线充电线圈。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>拆机也不够</h3>
+      <ol class="tight">
+        <li>真实频率、行程、推力-电流曲线。</li>
+        <li>3,240,000 次/分钟的厂商口径定义。</li>
+        <li>0.05 mm 刀网的刃角/孔型/切割效率。</li>
+        <li>15W 快充的完整曲线与温升。</li>
+        <li>复装后 IPX7 是否仍成立。</li>
+        <li>长期可靠性（磁悬浮间隙、五刀头弹簧）。</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>本报告不回答：</strong>“值不值得买”“比 P3 好多少”“能用几年”。这些需要统一样本实测与长期数据，不是拆一台能得出的结论。
+  </div>
+</section>
+
+<section id="sources">
+  <div class="sec-head"><span class="sec-num">12</span><h2>来源与版本</h2></div>
+  <p class="sub">查询日 2026-11-27。官方与包装优先，媒体只作线索。</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>#</th><th>来源</th><th>类型</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td class="num">Y1</td><td>包装标签（实物）</td><td><span class="badge b-off">包装</span></td><td>型号、15W、5V3A、420mAh×2、35min、IPX7、标准</td></tr>
+      <tr><td class="num">Y2</td><td><a href="https://yoose.com.cn/mini5">yoose 官网 MINI 5 系列</a></td><td><span class="badge b-off">官方</span></td><td>产品定位、五刀头、14,000 RPM</td></tr>
+      <tr><td class="num">Y3</td><td><a href="https://yoose.eu/de/products/yoose-portable-alloy-electric-shaver-electric-razor-mini-5">yoose EU MINI 5 页</a></td><td><span class="badge b-off">官方</span></td><td>4+1、0.05mm、117g、90min、IPX7</td></tr>
+      <tr><td class="num">Y4</td><td><a href="https://item.jd.com/100231040603.html">京东 MINI 5 PRO 页</a></td><td><span class="badge b-med">渠道</span></td><td>价格、配色、在售版本</td></tr>
+      <tr><td class="num">Y5</td><td><a href="https://caifuhao.eastmoney.com/news/20250702114004524220130">东方财富：MINI 5 PRO 发布</a></td><td><span class="badge b-med">媒体</span></td><td>14,000 转、599 元、无线充电说法</td></tr>
+      <tr><td class="num">Y6</td><td><a href="https://www.citylink.com.hk/locale/zh-CHT/product/Yoose-Mini-5-Pro-%e9%9b%bb%e5%8b%95%e5%89%83%e9%ac%9a%e5%88%80%e7%a6%ae%e7%9b%92%e8%a3%9d-%e9%80%b2%e5%8f%a3%e8%b2%a8-KYOMINI5PRO-">CityLink HK MINI 5 Pro</a></td><td><span class="badge b-med">渠道</span></td><td>900mAh/7h/180g 冲突口径</td></tr>
+      <tr><td class="num">Y7</td><td><a href="https://mars9977.pixnet.net/blog/posts/9578157616">火星同学 MINI 5 开箱</a></td><td><span class="badge b-med">媒体</span></td><td>五刀头布局、旅行锁、拆洗</td></tr>
+      <tr><td class="num">Y8</td><td><a href="https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77FA1BC8DE06397BE0A0A87E8">GB/T 4706.1-2024</a></td><td><span class="badge b-off">标准</span></td><td>通用安全条款</td></tr>
+      <tr><td class="num">Y9</td><td><a href="https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77FA0BC8DE06397BE0A0A87E8">GB/T 4706.9-2024</a></td><td><span class="badge b-off">标准</span></td><td>剃须刀专用条款</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>结论可信度</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>结论</th><th>可信度</th><th>边界</th></tr></thead>
+    <tbody>
+      <tr><td>型号 YSFSW50-Z、15W、420mAh×2、35min</td><td>高</td><td>包装标签；批次以实物铭牌为准</td></tr>
+      <tr><td>5 刀头（4+1）、0.05mm、117g、90min、IPX7</td><td>中高</td><td>官方/渠道；PRO 与 W5 混写风险</td></tr>
+      <tr><td>14,000 RPM ≈ 233 Hz</td><td>中高</td><td>单位换算；实际往复频率待测</td></tr>
+      <tr><td>3,240,000 次/分钟可复原为 233×2×23×5×60</td><td>中</td><td>0.6% 吻合，但厂商未给公式</td></tr>
+      <tr><td>双电芯并联</td><td>推断</td><td>拆机看极耳与电池座</td></tr>
+      <tr><td>五刀头至少两组传动</td><td>推断</td><td>看连杆与驱动 IC</td></tr>
+      <tr><td>磁悬浮为真无接触</td><td>待验证</td><td>看导轨/弹片/间隙</td></tr>
+      <tr><td>无线充电</td><td>低，待验证</td><td>仅媒体口径；包装未列底座</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>版本与边界</h3>
+  <ul class="tight">
+    <li><b>v0.1 · 2026-11-27 · 研究版。</b>未做本机拆解与台架实测；全文推断项已标。</li>
+    <li>拆机由机主执行；本报告提供预期、取证清单与对照口径，不代替拆解记录。</li>
+    <li>商标与产品名归 yoose（有色）所有；本报告为非官方独立研究。</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>有色 MINI 5 PRO 拆机研究报告 v0.1</b> · 2026-11-27</p>
+  <p>研究执行：Program-leader（汇总与证据核对）· Codex（公开资料检索）· 文献答疑 / 架构师 / 仿真专家 / 试验标定 / 简单报错处理（分模块）。</p>
+  <p>证据规矩：官方声明 ≠ 实测；同平台拆解 ≠ 本机拆解；推断必须写依据。找不到就写“未找到”。</p>
+</footer>
+
+</div>
+</body>
+</html>
