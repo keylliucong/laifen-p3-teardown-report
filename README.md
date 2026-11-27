@@ -6,6 +6,14 @@
 
 从[首页一页纸](https://keylliucong.github.io/laifen-p3-teardown-report/)进入[八章全文](https://keylliucong.github.io/laifen-p3-teardown-report/v2/)，也可查阅 [v1 历史版](https://keylliucong.github.io/laifen-p3-teardown-report/v1/)。T1 为一手文档，T2 为多渠道交叉印证，T3 为推断与旁证。
 
+## 交付物
+
+- [PPTX（16 页）](deck/laifen-p3-yoose-mini5pro-v2.pptx) — 可直接演示，四张图均为可编辑矢量形状
+- [PDF（16 页）](deck/laifen-p3-yoose-mini5pro-v2.pdf) — 手机阅读版
+- [口播稿](deck/speaker-notes.md) — 与备注页同文，逐页 2–4 句
+
+v1 的两份旧 deck 仍保留在 [`/v1/`](v1/)。本仓库不含 v2 PPT 生成脚本。运行该脚本需要仓库外的证据表。
+
 ## v2 相对 v1 的变更
 
 | v1 的问题 | v2 怎么改 | 落在哪章 |
@@ -22,6 +30,7 @@
 - v2.2：图 1「中国标价」行口径统一（有色改为空心 599＋报道价注释）；图 2 按第 2 章矩阵重数样本量（重量/刀列/续航 5/6、满充 6/6、价格 3/6、耗材 4/6）。
 - v2.3：修正覆盖口径——原「72 格里 55 格无法核实」改为「11 格无任何可核数据、1 格口径不可比、35 格证据行补录中」；55 是「含未核标记的格数」，不是「查不到的格数」，两者不可互换。
 - v2.4：证据行补录完成（证据表 113→161 行），72 格覆盖状态定为 60 有行／11 未核／1 不可比；「正在补录」表述同步移除。
+- v2.5：发布 16 页 PPTX、PDF 和口播稿，新增[发布检查表](docs/发布检查表.md)。
 
 ## 声明与许可
 
