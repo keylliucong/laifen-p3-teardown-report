@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="445" viewBox="0 0 960 445" preserveAspectRatio="xMidYMin" role="img" aria-labelledby="title desc">
+<title id="title">五维中仅两维有同口径双侧值：满充差约 55 分钟，刀列为 3 对 5</title>
+<desc id="desc">左右固定为两台机型，连线仅表示可成对比较。金额为发布或挂牌口径。</desc>
+<defs><pattern id="unknown" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="7" height="7" fill="#d6d3d1"/><path d="M0 0 V7" stroke="#a8a29e" stroke-width="1.4"/></pattern></defs>
+<g font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+<rect x="0" y="0" width="960" height="445" fill="#fff"/>
+<text x="28" y="39" font-size="22" fill="#292524" font-weight="700" text-anchor="start">五维中仅两维有同口径双侧值：满充差约 55 分钟，刀列为 3 对 5</text>
+<text x="28" y="65" font-size="14" fill="#57534e" font-weight="400" text-anchor="start">左右固定为两台机型，连线仅表示可成对比较。金额为发布或挂牌口径。</text>
+<rect x="28" y="88" width="904" height="38" fill="#fafaf9" rx="6"/>
+<text x="45" y="112" font-size="14" fill="#57534e" font-weight="650" text-anchor="start">比较维度</text>
+<text x="298" y="112" font-size="15" fill="#b45309" font-weight="700" text-anchor="middle">徕芬 P3</text>
+<text x="530" y="112" font-size="14" fill="#57534e" font-weight="650" text-anchor="middle">差值</text>
+<text x="762" y="112" font-size="15" fill="#0f766e" font-weight="700" text-anchor="middle">有色 MINI 5 PRO</text>
+<line x1="29" y1="182" x2="931" y2="182" stroke="#e7e5e4" stroke-width="1"/>
+<text x="45" y="163" font-size="15" fill="#292524" font-weight="600" text-anchor="start">重量（g）</text>
+<line x1="298" y1="158" x2="762" y2="158" stroke="#c7c3c0" stroke-width="2" stroke-dasharray="5 5"/>
+<circle cx="298" cy="158" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="282" y="163" font-size="15" fill="#b45309" font-weight="650" text-anchor="end">187.1</text>
+<rect x="750" y="151" width="24" height="14" fill="url(#unknown)" rx="2"/>
+<text x="784" y="163" font-size="14" fill="#57534e" font-weight="650" text-anchor="start">未核</text>
+<line x1="29" y1="225" x2="931" y2="225" stroke="#e7e5e4" stroke-width="1"/>
+<text x="45" y="206" font-size="15" fill="#292524" font-weight="600" text-anchor="start">标称续航（min）</text>
+<line x1="298" y1="201" x2="762" y2="201" stroke="#c7c3c0" stroke-width="2" stroke-dasharray="5 5"/>
+<circle cx="298" cy="201" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="282" y="206" font-size="15" fill="#b45309" font-weight="650" text-anchor="end">约 90</text>
+<rect x="750" y="194" width="24" height="14" fill="url(#unknown)" rx="2"/>
+<text x="784" y="206" font-size="14" fill="#57534e" font-weight="650" text-anchor="start">未核</text>
+<line x1="29" y1="268" x2="931" y2="268" stroke="#e7e5e4" stroke-width="1"/>
+<text x="45" y="249" font-size="15" fill="#292524" font-weight="600" text-anchor="start">满充（min）</text>
+<line x1="298" y1="244" x2="762" y2="244" stroke="#a8a29e" stroke-width="2"/>
+<circle cx="298" cy="244" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="282" y="249" font-size="15" fill="#b45309" font-weight="650" text-anchor="end">约 90</text>
+<rect x="448" y="231" width="164" height="26" fill="#fff" rx="6"/>
+<text x="530" y="249" font-size="14" fill="#57534e" font-weight="650" text-anchor="middle">有色少约 55 min</text>
+<circle cx="762" cy="244" r="5" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"/>
+<text x="784" y="249" font-size="14" fill="#0f766e" font-weight="650" text-anchor="start">35</text>
+<line x1="29" y1="311" x2="931" y2="311" stroke="#e7e5e4" stroke-width="1"/>
+<text x="45" y="292" font-size="15" fill="#292524" font-weight="600" text-anchor="start">中国标价（元）</text>
+<line x1="298" y1="287" x2="762" y2="287" stroke="#c7c3c0" stroke-width="2" stroke-dasharray="5 5"/>
+<circle cx="298" cy="287" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="282" y="292" font-size="15" fill="#b45309" font-weight="650" text-anchor="end">599</text>
+<rect x="750" y="280" width="24" height="14" fill="url(#unknown)" rx="2"/>
+<text x="784" y="292" font-size="14" fill="#57534e" font-weight="650" text-anchor="start">统一官方价未核</text>
+<line x1="29" y1="354" x2="931" y2="354" stroke="#e7e5e4" stroke-width="1"/>
+<text x="45" y="335" font-size="15" fill="#292524" font-weight="600" text-anchor="start">刀列数</text>
+<line x1="298" y1="330" x2="762" y2="330" stroke="#a8a29e" stroke-width="2"/>
+<circle cx="298" cy="330" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="282" y="335" font-size="15" fill="#b45309" font-weight="650" text-anchor="end">3 列</text>
+<rect x="448" y="317" width="164" height="26" fill="#fff" rx="6"/>
+<text x="530" y="335" font-size="14" fill="#57534e" font-weight="650" text-anchor="middle">有色多两列</text>
+<circle cx="762" cy="330" r="5" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"/>
+<text x="784" y="335" font-size="14" fill="#0f766e" font-weight="650" text-anchor="start">5 列</text>
+<text x="45" y="366" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">有色上市报道同为 599 元，统一官方标价仍未核。</text>
+<line x1="28" y1="371" x2="932" y2="371" stroke="#e7e5e4" stroke-width="1"/>
+<circle cx="35" cy="392" r="5" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
+<text x="47" y="397" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">实心＝可核（T1/T2）</text>
+<circle cx="235" cy="392" r="5" fill="#fff" stroke="#78716c" stroke-width="1.6"/>
+<text x="247" y="397" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">空心＝T3 爆料</text>
+<rect x="413" y="385" width="23" height="14" fill="url(#unknown)" rx="2"/>
+<text x="444" y="397" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">灰色斜纹＝未核</text>
+<text x="28" y="425" font-size="14" fill="#6b6561" font-weight="400" text-anchor="start">Source: 见第 2 章来源码 L1/L5/L8/LP/YP/Y2/Y8/Y11；查询 2026-11-27；口径：标称与发布参考，未实测；n=2 款</text>
+</g>
+</svg>

@@ -30,7 +30,10 @@
   .note strong{color:#7c2d12}
   footer{margin-top:40px;border-top:1px solid var(--border,#e7e2dc);padding:26px 0 50px;font-size:12.5px;color:var(--muted-foreground,#78716c)}
   html{scroll-padding-top:76px}
-  .tablewrap{overflow-x:auto;max-width:100%}
+  .tablewrap,.figure{overflow-x:auto;max-width:100%}
+  .figure{margin:18px 0 24px}
+  .figure img{display:block;width:100%;max-width:100%;height:auto}
+  .figure-caption{font-size:14px;color:var(--muted-foreground,#57534e)}
   td{overflow-wrap:anywhere}
   .topbar{position:sticky;top:0;z-index:5;background:var(--card,#fffdfa);border-bottom:1px solid var(--border,#e7e2dc)}
   .topbar .wrap{min-height:56px;display:flex;align-items:center;justify-content:flex-end;padding-block:8px}
@@ -88,7 +91,29 @@
 反证条件：若第 6 章显示电机模组为外购通用件、单台 BOM 中电机占比低于 15%，则「成本创新」也降为营销。</p>
 </section>
 <section class="section">
-<h2>只放可比的六维小表</h2>
+<h2>四张图</h2>
+<div class="figure">
+<img src="figures/fig1-dumbbell.svg" alt="五维中仅两维有同口径双侧值：满充差约 55 分钟，刀列为 3 对 5" loading="lazy" width="100%" height="auto">
+<p class="figure-caption">图 1｜两台主角在满充和刀列有双侧规格，重量、续航和统一官方价仍有缺项。</p>
+</div>
+
+<div class="figure">
+<img src="figures/fig2-smallmultiples.svg" alt="耗材粒度可辨，两台主角仍缺中国官方 SKU 与价格组合" loading="lazy" width="100%" height="auto">
+<p class="figure-caption">图 2｜耗材有公开粒度线索，两台主角仍缺中国官方 SKU 与价格组合。</p>
+</div>
+
+<div class="figure">
+<img src="figures/fig3-rankband.svg" alt="十二维有六维排不出位次：计数、刀网和噪音缺共同口径" loading="lazy" width="100%" height="auto">
+<p class="figure-caption">图 3｜十二维有六维排不出位次，余下位次仅适用于各维可比子样本。</p>
+</div>
+
+<div class="figure">
+<img src="figures/fig4-pricetimeline.svg" alt="两款上市初期均见低于发布参考的报价，优惠明细有缺口" loading="lazy" width="100%" height="auto">
+<p class="figure-caption">图 4｜两款上市初期均见低于发布参考的条件报价，券后缺口及历史旁支单列。</p>
+</div>
+</section>
+<section class="section">
+<h2>缩略表，完整 6×6 见第 2 章</h2>
 <div class="tablewrap" tabindex="0" role="region" aria-label="可横向滚动的表格">
 <table>
 <thead>
@@ -104,13 +129,13 @@
 </thead>
 <tbody>
 <tr>
-<td>重量（g）</td>
-<td>187.1（第 3）</td>
-<td>未核</td>
-<td>179（第 2）</td>
-<td>约 145（第 1）</td>
-<td>207（第 4）</td>
-<td>约 226（第 5）</td>
+<td>满充（min）</td>
+<td>90（并列第 4）</td>
+<td>35（第 1）</td>
+<td>90（并列第 4）</td>
+<td>120（第 6）</td>
+<td>60（并列第 2）</td>
+<td>60（并列第 2）</td>
 </tr>
 <tr>
 <td>刀列数</td>
@@ -122,24 +147,6 @@
 <td>3 盘（不可比）</td>
 </tr>
 <tr>
-<td>续航（min，标称）</td>
-<td>约 90（第 2）</td>
-<td>未核</td>
-<td>100（第 1）</td>
-<td>50（第 5）</td>
-<td>60（并列第 3）</td>
-<td>60（并列第 3）</td>
-</tr>
-<tr>
-<td>满充（min）</td>
-<td>90（并列第 4）</td>
-<td>35（第 1）</td>
-<td>90（并列第 4）</td>
-<td>120（第 6）</td>
-<td>60（并列第 2）</td>
-<td>60（并列第 2）</td>
-</tr>
-<tr>
 <td>中国标价（元）</td>
 <td>599（并列第 1）</td>
 <td>599（并列第 1）</td>
@@ -148,19 +155,10 @@
 <td>未核</td>
 <td>未核</td>
 </tr>
-<tr>
-<td>耗材粒度</td>
-<td>缺官方 SKU/价组合（未核）</td>
-<td>缺官方 SKU/价组合（未核）</td>
-<td>组件/替换刃（并列第 1）</td>
-<td>外刃/内刃/套件（并列第 1）</td>
-<td>同型适配件（并列第 2）</td>
-<td>同型适配件（并列第 2）</td>
-</tr>
 </tbody>
 </table>
 </div>
-<p>位次仅在本表内可比子样本中计算，口径见第 2 章。</p>
+<p>位次仅在本表内可比子样本中计算，口径见第 2 章。有色中国标价采用历史上市报道。</p>
 </section>
 <section class="section">
 <h2>一行大字 + 三类原因</h2>

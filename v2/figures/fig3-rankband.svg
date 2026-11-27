@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="771" viewBox="0 0 960 771" preserveAspectRatio="xMidYMin" role="img" aria-labelledby="title desc">
+<title id="title">十二维有六维排不出位次：计数、刀网和噪音缺共同口径</title>
+<desc id="desc">位次照录第 2.1 节。并列占位，右列保留未排入的机型及整维不可比原因。</desc>
+<defs><pattern id="unknown" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="7" height="7" fill="#d6d3d1"/><path d="M0 0 V7" stroke="#a8a29e" stroke-width="1.4"/></pattern></defs>
+<g font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+<rect x="0" y="0" width="960" height="771" fill="#fff"/>
+<text x="28" y="39" font-size="22" fill="#292524" font-weight="700" text-anchor="start">十二维有六维排不出位次：计数、刀网和噪音缺共同口径</text>
+<text x="28" y="65" font-size="14" fill="#57534e" font-weight="400" text-anchor="start">位次照录第 2.1 节。并列占位，右列保留未排入的机型及整维不可比原因。</text>
+<circle cx="35" cy="94" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="47" y="99" font-size="13" fill="#b45309" font-weight="650" text-anchor="start">徕芬 P3</text>
+<circle cx="156" cy="94" r="5" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"/>
+<text x="168" y="99" font-size="13" fill="#0f766e" font-weight="650" text-anchor="start">有色 MINI 5 PRO</text>
+<rect x="321" y="89" width="10" height="10" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
+<text x="338" y="99" font-size="13" fill="#78716c" font-weight="650" text-anchor="start">徕芬 P3 Pro</text>
+<polygon points="464,88 470,94 464,100 458,94" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
+<text x="476" y="99" font-size="13" fill="#78716c" font-weight="650" text-anchor="start">松下 ARC5 Palm</text>
+<polygon points="626,88 632,99 620,99" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
+<text x="638" y="99" font-size="13" fill="#78716c" font-weight="650" text-anchor="start">博朗 9667cc</text>
+<polygon points="770,89 780,89 775,100" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
+<text x="787" y="99" font-size="13" fill="#78716c" font-weight="650" text-anchor="start">飞利浦 XP9205/05</text>
+<text x="45" y="137" font-size="14" fill="#57534e" font-weight="700" text-anchor="start">维度</text>
+<text x="587" y="137" font-size="14" fill="#57534e" font-weight="700" text-anchor="start">未排入或口径说明</text>
+<text x="268" y="137" font-size="13" fill="#57534e" font-weight="600" text-anchor="middle">1 名</text>
+<text x="322" y="137" font-size="13" fill="#57534e" font-weight="600" text-anchor="middle">2 名</text>
+<text x="376" y="137" font-size="13" fill="#57534e" font-weight="600" text-anchor="middle">3 名</text>
+<text x="430" y="137" font-size="13" fill="#57534e" font-weight="600" text-anchor="middle">4 名</text>
+<text x="484" y="137" font-size="13" fill="#57534e" font-weight="600" text-anchor="middle">5 名</text>
+<text x="538" y="137" font-size="13" fill="#57534e" font-weight="600" text-anchor="middle">6 名</text>
+<rect x="28" y="147" width="904" height="35" fill="#fafaf9" rx="5"/>
+<text x="45" y="169" font-size="14" fill="#292524" font-weight="650" text-anchor="start">形态与重量</text>
+<line x1="245" y1="164" x2="561" y2="164" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="268" y1="150" x2="268" y2="178" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="322" y1="150" x2="322" y2="178" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="376" y1="150" x2="376" y2="178" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="430" y1="150" x2="430" y2="178" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="484" y1="150" x2="484" y2="178" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="538" y1="150" x2="538" y2="178" stroke="#e7e5e4" stroke-width="1"/>
+<polygon points="268,158.7 273.3,164 268,169.3 262.7,164" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>松下 ARC5 Palm</title></polygon>
+<rect x="317.7" y="159.7" width="8.6" height="8.6" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>徕芬 P3 Pro</title></rect>
+<circle cx="376" cy="164" r="3.8" fill="#b45309" stroke="#b45309" stroke-width="0.8"><title>徕芬 P3</title></circle>
+<polygon points="430,158.7 435.3,168.3 424.7,168.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>博朗 9667cc</title></polygon>
+<polygon points="479.7,159.7 488.3,159.7 484,169.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>飞利浦 XP9205/05</title></polygon>
+<rect x="566" y="159" width="13" height="10" fill="url(#unknown)" rx="1"/>
+<text x="587" y="169" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">有色中国版净重未核</text>
+<rect x="28" y="191" width="904" height="35" fill="#fff" rx="5"/>
+<text x="45" y="213" font-size="14" fill="#292524" font-weight="650" text-anchor="start">电机架构</text>
+<rect x="245" y="198" width="316" height="20" fill="url(#unknown)" rx="3" opacity="0.83"/>
+<text x="587" y="213" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">不可比｜缺同负载的推力、行程和速度保持数据</text>
+<rect x="28" y="235" width="904" height="35" fill="#fafaf9" rx="5"/>
+<text x="45" y="257" font-size="14" fill="#292524" font-weight="650" text-anchor="start">切剃计数</text>
+<rect x="245" y="242" width="316" height="20" fill="url(#unknown)" rx="3" opacity="0.83"/>
+<text x="587" y="257" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">不可比｜周期、内刀行程和多刀累计口径各异</text>
+<rect x="28" y="279" width="904" height="35" fill="#fff" rx="5"/>
+<text x="45" y="301" font-size="14" fill="#292524" font-weight="650" text-anchor="start">主头切削刀列</text>
+<line x1="245" y1="296" x2="561" y2="296" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="268" y1="282" x2="268" y2="310" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="322" y1="282" x2="322" y2="310" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="376" y1="282" x2="376" y2="310" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="430" y1="282" x2="430" y2="310" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="484" y1="282" x2="484" y2="310" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="538" y1="282" x2="538" y2="310" stroke="#e7e5e4" stroke-width="1"/>
+<circle cx="268" cy="292" r="3.8" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"><title>有色 MINI 5 PRO</title></circle>
+<polygon points="268,294.7 273.3,300 268,305.3 262.7,300" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>松下 ARC5 Palm</title></polygon>
+<polygon points="376,290.7 381.3,300.3 370.7,300.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>博朗 9667cc</title></polygon>
+<circle cx="430" cy="292" r="3.8" fill="#b45309" stroke="#b45309" stroke-width="0.8"><title>徕芬 P3</title></circle>
+<rect x="425.7" y="295.7" width="8.6" height="8.6" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>徕芬 P3 Pro</title></rect>
+<rect x="566" y="291" width="13" height="10" fill="url(#unknown)" rx="1"/>
+<text x="587" y="301" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">飞利浦为旋转盘，未列入</text>
+<rect x="28" y="323" width="904" height="35" fill="#fafaf9" rx="5"/>
+<text x="45" y="345" font-size="14" fill="#292524" font-weight="650" text-anchor="start">刀网</text>
+<rect x="245" y="330" width="316" height="20" fill="url(#unknown)" rx="3" opacity="0.83"/>
+<text x="587" y="345" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">不可比｜缺同型号、同批次的统一截面测量</text>
+<rect x="28" y="367" width="904" height="35" fill="#fff" rx="5"/>
+<text x="45" y="389" font-size="14" fill="#292524" font-weight="650" text-anchor="start">浮动与贴合</text>
+<rect x="245" y="374" width="316" height="20" fill="url(#unknown)" rx="3" opacity="0.83"/>
+<text x="587" y="389" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">不可比｜进须角、整头摆角与全向贴合定义各异</text>
+<rect x="28" y="411" width="904" height="35" fill="#fafaf9" rx="5"/>
+<text x="45" y="433" font-size="14" fill="#292524" font-weight="650" text-anchor="start">标称续航</text>
+<line x1="245" y1="428" x2="561" y2="428" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="268" y1="414" x2="268" y2="442" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="322" y1="414" x2="322" y2="442" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="376" y1="414" x2="376" y2="442" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="430" y1="414" x2="430" y2="442" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="484" y1="414" x2="484" y2="442" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="538" y1="414" x2="538" y2="442" stroke="#e7e5e4" stroke-width="1"/>
+<rect x="263.7" y="423.7" width="8.6" height="8.6" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>徕芬 P3 Pro</title></rect>
+<circle cx="322" cy="428" r="3.8" fill="#b45309" stroke="#b45309" stroke-width="0.8"><title>徕芬 P3</title></circle>
+<polygon points="376,418.7 381.3,428.3 370.7,428.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>博朗 9667cc</title></polygon>
+<polygon points="371.7,427.7 380.3,427.7 376,437.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>飞利浦 XP9205/05</title></polygon>
+<polygon points="484,422.7 489.3,428 484,433.3 478.7,428" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>松下 ARC5 Palm</title></polygon>
+<rect x="566" y="423" width="13" height="10" fill="url(#unknown)" rx="1"/>
+<text x="587" y="433" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">有色中国同型运行分钟数未核</text>
+<rect x="28" y="455" width="904" height="35" fill="#fff" rx="5"/>
+<text x="45" y="477" font-size="14" fill="#292524" font-weight="650" text-anchor="start">标称满充</text>
+<line x1="245" y1="472" x2="561" y2="472" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="268" y1="458" x2="268" y2="486" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="322" y1="458" x2="322" y2="486" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="376" y1="458" x2="376" y2="486" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="430" y1="458" x2="430" y2="486" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="484" y1="458" x2="484" y2="486" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="538" y1="458" x2="538" y2="486" stroke="#e7e5e4" stroke-width="1"/>
+<circle cx="268" cy="472" r="3.8" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"><title>有色 MINI 5 PRO</title></circle>
+<polygon points="322,462.7 327.3,472.3 316.7,472.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>博朗 9667cc</title></polygon>
+<polygon points="317.7,471.7 326.3,471.7 322,481.3" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>飞利浦 XP9205/05</title></polygon>
+<circle cx="430" cy="468" r="3.8" fill="#b45309" stroke="#b45309" stroke-width="0.8"><title>徕芬 P3</title></circle>
+<rect x="425.7" y="471.7" width="8.6" height="8.6" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>徕芬 P3 Pro</title></rect>
+<polygon points="538,466.7 543.3,472 538,477.3 532.7,472" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>松下 ARC5 Palm</title></polygon>
+<text x="587" y="477" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">按各主版本标称满充时间</text>
+<rect x="28" y="499" width="904" height="35" fill="#fafaf9" rx="5"/>
+<text x="45" y="521" font-size="14" fill="#292524" font-weight="650" text-anchor="start">防水声明</text>
+<line x1="245" y1="516" x2="561" y2="516" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="268" y1="502" x2="268" y2="530" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="322" y1="502" x2="322" y2="530" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="376" y1="502" x2="376" y2="530" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="430" y1="502" x2="430" y2="530" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="484" y1="502" x2="484" y2="530" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="538" y1="502" x2="538" y2="530" stroke="#e7e5e4" stroke-width="1"/>
+<circle cx="268" cy="504" r="3.2" fill="#b45309" stroke="#b45309" stroke-width="0.8"><title>徕芬 P3</title></circle>
+<circle cx="268" cy="512" r="3.2" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"><title>有色 MINI 5 PRO</title></circle>
+<rect x="264.8" y="516.8" width="6.4" height="6.4" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>徕芬 P3 Pro</title></rect>
+<polygon points="268,523.8 272.2,528 268,532.2 263.8,528" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>松下 ARC5 Palm</title></polygon>
+<rect x="566" y="511" width="13" height="10" fill="url(#unknown)" rx="1"/>
+<text x="587" y="521" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">按 IPX7 声明并列；博朗、飞利浦未排</text>
+<rect x="28" y="543" width="904" height="35" fill="#fff" rx="5"/>
+<text x="45" y="565" font-size="14" fill="#292524" font-weight="650" text-anchor="start">噪音</text>
+<rect x="245" y="550" width="316" height="20" fill="url(#unknown)" rx="3" opacity="0.83"/>
+<text x="587" y="565" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">不可比｜缺同负载、同距离的 A 计权记录</text>
+<rect x="28" y="587" width="904" height="35" fill="#fafaf9" rx="5"/>
+<text x="45" y="609" font-size="14" fill="#292524" font-weight="650" text-anchor="start">耗材</text>
+<rect x="245" y="594" width="316" height="20" fill="url(#unknown)" rx="3" opacity="0.83"/>
+<text x="587" y="609" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">不可比｜中国可得性和到手价缺同口径资料</text>
+<rect x="28" y="631" width="904" height="35" fill="#fff" rx="5"/>
+<text x="45" y="653" font-size="14" fill="#292524" font-weight="650" text-anchor="start">中国标价</text>
+<line x1="245" y1="648" x2="561" y2="648" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="268" y1="634" x2="268" y2="662" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="322" y1="634" x2="322" y2="662" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="376" y1="634" x2="376" y2="662" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="430" y1="634" x2="430" y2="662" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="484" y1="634" x2="484" y2="662" stroke="#e7e5e4" stroke-width="1"/>
+<line x1="538" y1="634" x2="538" y2="662" stroke="#e7e5e4" stroke-width="1"/>
+<circle cx="268" cy="644" r="3.8" fill="#b45309" stroke="#b45309" stroke-width="0.8"><title>徕芬 P3</title></circle>
+<circle cx="268" cy="652" r="3.8" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"><title>有色 MINI 5 PRO</title></circle>
+<rect x="371.7" y="643.7" width="8.6" height="8.6" rx="1" fill="#78716c" stroke="#78716c" stroke-width="0.8"><title>徕芬 P3 Pro</title></rect>
+<rect x="566" y="643" width="13" height="10" fill="url(#unknown)" rx="1"/>
+<text x="587" y="653" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">三款进口机中国价未核；有色取发布报道</text>
+<line x1="28" y1="697" x2="932" y2="697" stroke="#e7e5e4" stroke-width="1"/>
+<circle cx="35" cy="718" r="5" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
+<text x="47" y="723" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">实心＝可核（T1/T2）</text>
+<circle cx="235" cy="718" r="5" fill="#fff" stroke="#78716c" stroke-width="1.6"/>
+<text x="247" y="723" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">空心＝T3 爆料</text>
+<rect x="413" y="711" width="23" height="14" fill="url(#unknown)" rx="2"/>
+<text x="444" y="723" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">灰色斜纹＝未核</text>
+<text x="28" y="751" font-size="14" fill="#6b6561" font-weight="400" text-anchor="start">Source: 见第 2.1 节位次表及 L1/L3/L5/L6/YP/P1/P2/B1/B7/F1；查询 2026-11-27；口径：分维排名，未实测；n=6 款</text>
+</g>
+</svg>
