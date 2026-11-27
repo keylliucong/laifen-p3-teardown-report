@@ -337,7 +337,7 @@
         <tr><td>PCBA</td><td>直线电机驱动（T1 为拓尔微 TMI8261）</td><td><span class="badge b-inf">推断</span></td><td>双电机：1 颗还是 2 颗？</td></tr>
         <tr><td>PCBA</td><td>充电管理（T1 为钰泰 ETA6198）</td><td><span class="badge b-inf">推断</span></td><td>4.35 V 充电；OTG 通路待确认</td></tr>
         <tr><td>PCBA</td><td>压感（T1 为芯海 CSU18M68）</td><td><span class="badge b-inf">推断</span></td><td>全域感应按钮</td></tr>
-        <tr><td>电池组</td><td>软包电芯 ×1 或 ×2</td><td><span class="badge b-todo">待确认</span></td><td>P3 Pro 称“两颗对称”，P3 未说明</td></tr>
+        <tr><td>电池组</td><td>软包电芯 ×2（拆解视频）</td><td><span class="badge b-med">拆解</span></td><td>作者称每块 500 mAh；本批次并联走线待确认</td></tr>
         <tr><td>电池组</td><td>保护板（T1 为比亚迪 BM192 系列）</td><td><span class="badge b-inf">推断</span></td><td>极耳点焊 + 涂胶</td></tr>
         <tr><td>密封</td><td>机头 O 圈 ×2 / 尾部胶圈 ×2</td><td><span class="badge b-inf">推断</span></td><td>依 T1 Pro 逐项迁移</td></tr>
       </tbody>
@@ -407,20 +407,34 @@
     </div>
   </div>
 
-  <h3>可检验预测（拆机当天可对照）</h3>
+  <h3>A. 拆前通电可测（先测再拆，顺序不能颠倒）</h3>
   <div class="tbl-wrap">
   <table>
-    <thead><tr><th>编号</th><th>预测</th><th>预期值</th><th>怎么验</th></tr></thead>
+    <thead><tr><th>#</th><th>什么时候测</th><th>看哪里 / 量什么</th><th>预期范围</th><th>不符意味着什么</th></tr></thead>
     <tbody>
-      <tr><td class="num">P1</td><td>刀头座加速度主峰</td><td>200 ± 5 Hz；壳体 ≤ 刀头座 1/5</td><td>加速度计 + FFT；主峰在 100 Hz 则“12,000 CPM”按单程计</td></tr>
-      <tr><td class="num">P2</td><td>峰峰行程</td><td>0.4–0.8 mm（振幅 0.2–0.4 mm）</td><td>高速摄影 / 激光位移计，3 次离散 &lt;5%</td></tr>
-      <tr><td class="num">P3</td><td>空载功率</td><td>整机 1.3–1.6 W；每台电机 0.17–0.21 A @3.8 V</td><td>USB 功率计 + 支路电流</td></tr>
-      <tr><td class="num">P4</td><td>推力-电流线性度</td><td>R² ≥ 0.95；k<sub>F</sub> ≈ 0.4–0.6 N/A</td><td>堵转/加载台，测力-电流曲线</td></tr>
-      <tr><td class="num">P5</td><td>噪声频谱</td><td>200/400/600 Hz 窄带纯音；空载 1 m 55–65 dB(A)</td><td>声级计 + 1/3 倍频程</td></tr>
+      <tr><td class="num">A1</td><td>整机通电、装刀头空载</td><td>加速度计贴刀头座与壳体，采样 ≥10 kHz，FFT 看主峰</td><td>主峰 200 ± 5 Hz；壳体峰 ≤ 刀头座的 1/5</td><td>主峰 100 Hz → “12,000 CPM”的“次”是单程；壳体/刀头 &gt;0.5 → 隔振失效或双电机失衡</td></tr>
+      <tr><td class="num">A2</td><td>同上，刀头可取下</td><td>高速摄影（≥2000 fps）或激光位移计，对准刀片边缘，测单周期位移峰峰</td><td>0.4–0.8 mm 峰峰；3 次离散 &lt;5%</td><td>&lt;0.3 mm → 推毛/切不净；&gt;1.0 mm → 加速度与功耗超标</td></tr>
+      <tr><td class="num">A3</td><td>满电、空载</td><td>USB 功率计读输入功率；能拆后串电流表测电机支路</td><td>整机 1.3–1.6 W；3.8 V 下每台 0.17–0.21 A</td><td>偏高 → 效率低或续航标称乐观；偏低 → 两个电机可能不同时工作</td></tr>
+      <tr><td class="num">A4</td><td>空载、贴皮肤空载各一次</td><td>声级计距 1 m，1/3 倍频程</td><td>主峰 200/400/600 Hz 窄带纯音；55–65 dB(A)；贴皮肤 +3–5 dB</td><td>主峰不在整数倍 → 另有激励源；宽带明显 → 刀片—刀网摩擦占主导</td></tr>
     </tbody>
   </table>
   </div>
-  <p><small>以上均为机理估算与设计区间，不是实测。峰值加速度约 316–632 m/s²（32–64 g），峰值推力 2–4 N，均为量级参考。</small></p>
+
+  <h3>B. 拆到该步可确认（目视 / 量具）</h3>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>#</th><th>拆到哪</th><th>看什么 / 量什么</th><th>预期范围</th><th>不符意味着什么</th></tr></thead>
+    <tbody>
+      <tr><td class="num">B1</td><td>取下刀头，露出动子</td><td>弹片形式（金属涡卷 / 板簧 / 塑料）、片数、自由长度与线宽</td><td>金属涡卷，2–4 片对称</td><td>塑料弹片 → “金属弹片”表述不实；单片 → 抗偏载差</td></tr>
+      <tr><td class="num">B2</td><td>打开侧盖，露出定子</td><td>磁钢块数、尺寸、极性排布（N-S 相对 / Halbach）</td><td>每侧 2–4 块；8–12 × 4–6 × 1.5–2 mm</td><td>只有单侧磁钢 → 推力只有一半；“双电机”是两台而非双定子</td></tr>
+      <tr><td class="num">B3</td><td>看动子线圈</td><td>匝数、线径、直流电阻（LCR 表）</td><td>1–3 Ω/台；线径 0.2–0.4 mm</td><td>电阻远超 3 Ω → 铜损大；匝数很少 → k<sub>F</sub> 低、电流需求高</td></tr>
+      <tr><td class="num">B4</td><td>取下刀网</td><td>厚度与槽宽/孔径分开量（千分尺 + 显微镜）</td><td>厚度 ≈55 μm；槽宽 0.1–0.2 mm</td><td>只测厚度会误读；槽宽才是切净率关键</td></tr>
+      <tr><td class="num">B5</td><td>取下刀片</td><td>刃角与刃口半径（显微镜侧视）</td><td>刃角 20–30°；刃口半径 &lt;5 μm</td><td>刃角 &gt;35° → 切割力显著上升；刃口圆钝 → 夹须</td></tr>
+      <tr><td class="num">B6</td><td>刀片与刀网装回</td><td>刃口到刀网内侧的间隙 g（塞尺 / 显微）</td><td>20–50 μm，且 g &lt; 须径</td><td>g &gt;0.08 mm → 折须而非剪断；g 不均匀 → 局部切不净</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><small>A 组记测点位置、采样率、仪器型号、环境本底、重复次数；B 组记工具与放大倍数，并拍带标尺照片。缺任一项只能记“观测”，不能记“验证”。以上为机理估算与设计区间，不是实测。</small></p>
 </section>
 
 <section id="blade">
