@@ -1,0 +1,14 @@
+id,title,url,type,date,use
+S1,laifen.net P3 技术规格,https://www.laifen.net/electric-shaver/p3/specs,官方,2026-11-27,尺寸/材质/电机/电池/续航
+S2,laifen.net 机型对比,https://www.laifen.net/electric-shaver/compare,官方,2026-11-27,P3/P3 Pro/T1 Pro/T2 Pro 参数
+S3,laifen P3 Pro 技术页,https://app.laifen.net/electric-shaver/p3-pro,官方,2026-11-27,L2/55um/IPX7 报告号
+S4,充电头网 T1 Pro 拆解,https://www.chongdiantou.com/archives/1749107868282.html,拆解,2025-06-05,结构路径/密封/电池/PCBA
+S5,Big-Bit 中微 T1 Pro 拆解,https://www.mcu.com.cn/about-media/901.html,拆解,2025-06-20,电机-主板插接说法（与 S4 冲突）
+S6,避坑拆解 P3 标准版（B 站）,https://www.bilibili.com/video/BV1bAGz6oEr5/,拆解,2026-05-23,内组件/刀头弹簧/网面孔型/双电芯
+S7,ZEALER 拆两台徕芬,https://www.bilibili.com/video/BV1xmjuzFEmR/,拆解,2025-05-25,P3 Pro 同平台旁证
+S8,IT之家 P3 发布,https://www.ithome.com/0/949/011.htm,媒体,2026-05-11,价格/配色/刀头与电机口径
+S9,IT之家 P3 开售,https://www.ithome.com/0/942/408.htm,媒体,2026-04-23,509 元起/80min/双电芯
+S10,CN223124712U,https://patents.google.com/patent/CN223124712U/zh,专利,-,双往复电机反向+弹性悬挂
+S11,GB/T 4706.1-2024,https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77FA1BC8DE06397BE0A0A87E8,标准,2024-07-24,通用安全条款
+S12,GB/T 4706.9-2024,https://std.samr.gov.cn/gb/search/gbDetailed?id=1E5A13A77FA0BC8DE06397BE0A0A87E8,标准,2024-07-24,剃须刀专用条款
+S13,徕芬中国版 P3 说明书 PDF,https://gw-static.laifen.net/media/manual/ER91B-CN%20%E7%94%B5%E5%89%83%E9%A1%BB%E5%88%80%E5%A1%91%E8%83%B6%E7%89%88%E7%BA%BF%E4%B8%8A%E8%AF%B4%E6%98%8E%E4%B9%A6-40505-004245-A0-20260603%E3%80%9004%E8%BD%AC%E6%9B%B2%E7%89%88%E3%80%91.pdf,官方,2026-06-03,自动停机/充电边界/清洗回收
