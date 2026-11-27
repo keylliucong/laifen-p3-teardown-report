@@ -48,7 +48,9 @@
     ├── bom.csv         # 一级/二级 BOM 与证据状态
     ├── predictions.csv # P1–P5 可检验预测
     ├── sources.csv     # 来源清单
-    └── open-questions.csv
+    ├── open-questions.csv
+    ├── quick-measure.csv  # 手机 6 项快速测量数据表
+    └── evidence-log.csv   # 照片 ↔ 部件 ↔ 观察
 ```
 
 ## 本地查看

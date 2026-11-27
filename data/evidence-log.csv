@@ -1,0 +1,10 @@
+photo_id,step,part,observation,value_type,note
+E00,1,whole unit + label + barcode,整机四视图与铭牌,measured,
+E01,1,whole unit front,,measured,
+E02,2,blade head removed,磁铁位置与极性,measured,
+E03,3,blade head back,传动连接方式,measured,
+E04,4,rear cover removed,螺丝规格与数量,measured,
+E05,5,seal ring,密封圈位置与截面,measured,
+E06,6,battery,电池型号与连接方式,measured,
+E07,7,linear motor,定子/动子/弹片,measured,
+E08,8,pcba,主控与驱动丝印,measured,

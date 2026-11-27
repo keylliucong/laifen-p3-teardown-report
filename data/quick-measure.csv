@@ -1,0 +1,22 @@
+item,run_id,value,unit,method,condition,t_value,target,value_type,uncertainty,note
+CPM,A1,,CPM,phone_mic,full,10s,,measured,60,手机录音 FFT 取 150-250Hz 主峰
+CPM,A2,,CPM,phone_mic,full,10s,,measured,60,
+CPM,A3,,CPM,phone_mic,full,10s,,measured,60,
+stroke_est,A1,,mm,slow_motion_240fps,full,2s,head,measured,0.5,仅量级
+stroke_limit,A1,,mm,caliper,off,,head_frame,measured,0.2,机械上限非运行行程
+thickness,A1,,um,micrometer,off,,blade_mesh,measured,1,5 点均值 无千分尺填 missing
+aperture,A1,,um,photo_scale,off,,blade_mesh,measured,10,10 孔均值
+charge_power,A1,,W,usb_meter,20pct,1min,,measured,2%,
+charge_power,A1,,W,usb_meter,50pct,30min,,measured,2%,
+charge_power,A1,,W,usb_meter,full,full,,measured,2%,
+temp_before,A1,,C,ir_camera,full,before,battery_shell,measured,2,
+temp_after,A1,,C,ir_camera,full,after_5min,battery_shell,measured,2,
+temp_before,A1,,C,ir_camera,full,before,motor_shell,measured,2,
+temp_after,A1,,C,ir_camera,full,after_5min,motor_shell,measured,2,
+temp_before,A1,,C,ir_camera,full,before,grip,measured,2,
+temp_after,A1,,C,ir_camera,full,after_5min,grip,measured,2,
+temp_before,A1,,C,ir_camera,full,before,head_bracket,measured,2,
+temp_after,A1,,C,ir_camera,full,after_5min,head_bracket,measured,2,
+noise,A1,,dBA,phone_slm_app,full,10s,front,measured,3,1m 手机 App 未校准
+noise,A1,,dBA,phone_slm_app,full,10s,side,measured,3,
+noise,A1,,dBA,phone_slm_app,full,10s,rear,measured,3,
