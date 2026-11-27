@@ -39,8 +39,9 @@
 <line x1="298" y1="287" x2="762" y2="287" stroke="#c7c3c0" stroke-width="2" stroke-dasharray="5 5"/>
 <circle cx="298" cy="287" r="5" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
 <text x="282" y="292" font-size="15" fill="#b45309" font-weight="650" text-anchor="end">599</text>
-<rect x="750" y="280" width="24" height="14" fill="url(#unknown)" rx="2"/>
-<text x="784" y="292" font-size="14" fill="#57534e" font-weight="650" text-anchor="start">统一官方价未核</text>
+<circle cx="762" cy="287" r="5" fill="#fff" stroke="#0f766e" stroke-width="1.6"/>
+<text x="784" y="292" font-size="15" fill="#0f766e" font-weight="650" text-anchor="start">599</text>
+<text x="819" y="292" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">报道价，官方价未核</text>
 <line x1="29" y1="354" x2="931" y2="354" stroke="#e7e5e4" stroke-width="1"/>
 <text x="45" y="335" font-size="15" fill="#292524" font-weight="600" text-anchor="start">刀列数</text>
 <line x1="298" y1="330" x2="762" y2="330" stroke="#a8a29e" stroke-width="2"/>
@@ -50,7 +51,7 @@
 <text x="530" y="335" font-size="14" fill="#57534e" font-weight="650" text-anchor="middle">有色多两列</text>
 <circle cx="762" cy="330" r="5" fill="#0f766e" stroke="#0f766e" stroke-width="0.8"/>
 <text x="784" y="335" font-size="14" fill="#0f766e" font-weight="650" text-anchor="start">5 列</text>
-<text x="45" y="366" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">有色上市报道同为 599 元，统一官方标价仍未核。</text>
+<text x="45" y="366" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">有色 599 元按历史报道线索展示。</text>
 <line x1="28" y1="371" x2="932" y2="371" stroke="#e7e5e4" stroke-width="1"/>
 <circle cx="35" cy="392" r="5" fill="#78716c" stroke="#78716c" stroke-width="0.8"/>
 <text x="47" y="397" font-size="13" fill="#57534e" font-weight="400" text-anchor="start">实心＝可核（T1/T2）</text>
