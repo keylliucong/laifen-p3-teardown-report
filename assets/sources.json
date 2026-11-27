@@ -1,0 +1,65 @@
+{
+  "laifen/product.jpg": {
+    "page": "https://www.ithome.com/0/949/011.htm",
+    "url": "https://img.ithome.com/newsuploadfiles/2026/5/ee804f90-1560-4932-a647-b2e5bf719bc3.png",
+    "credit": "官方资料图 · IT之家发布报道",
+    "notes": "中国版 P3 标准版官方发布物料，裁切整机四色照片区域。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "laifen/blade.jpg": {
+    "page": "https://www.ithome.com/0/949/011.htm",
+    "url": "https://img.ithome.com/newsuploadfiles/2026/5/45ee52d1-c945-4a91-93b3-f64f4474d371.png",
+    "credit": "官方资料图 · IT之家发布报道",
+    "notes": "中国版 P3 标准版发布物料，裁切刀头、刀网近照。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "laifen/exploded.jpg": {
+    "page": "https://www.ithome.com/0/949/011.htm",
+    "url": "https://img.ithome.com/newsuploadfiles/2026/5/45ee52d1-c945-4a91-93b3-f64f4474d371.png",
+    "credit": "官方资料图 · IT之家发布报道",
+    "notes": "中国版 P3 标准版发布物料，裁切机身分解渲染。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "laifen/motor.jpg": {
+    "page": "https://www.laifentech.com/pages/p3-electric-shaver",
+    "url": "https://www.laifentech.com/cdn/shop/files/p3-pc--p3-pc-group-77.jpg",
+    "credit": "官方资料图 · 徕芬官网",
+    "notes": "徕芬美国 P3（PC 机身）产品页，裁切双直线电机细节。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "yoose/front.jpg": {
+    "page": "https://www.goldenpin.org.tw/goldenpin/tw/winners/2707",
+    "url": "https://storage.googleapis.com/goldenpin/award_work_pic/image/15310/detail_image_bc5690.jpeg",
+    "credit": "参赛资料图 · 金点设计奖",
+    "notes": "有色 MINI 5 PRO 参赛产品图，裁切构图，电镀银正面及侧面。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "yoose/hand.jpg": {
+    "page": "https://www.goldenpin.org.tw/goldenpin/tw/winners/2707",
+    "url": "https://storage.googleapis.com/goldenpin/award_work_pic/image/15312/detail_image_26c44d.jpeg",
+    "credit": "参赛资料图 · 金点设计奖",
+    "notes": "有色 MINI 5 PRO 参赛手持图，裁切构图。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "yoose/box.jpg": {
+    "page": "https://yoose.com.cn/mini5",
+    "url": "https://yoose.com.cn/uploads/upload/images/20250508/f32e9a0aecb3537cbf9033e6b61e2cae.jpg",
+    "credit": "官方资料图 · 有色官网",
+    "notes": "有色官网往复式产品目录明确标注 MINI 5PRO，裁切礼盒及手提袋。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "yoose/accessories.jpg": {
+    "page": "https://detail.youzan.com/show/goods?alias=2or1nd3w6mcwch7",
+    "url": "https://img01.yzcdn.cn/upload_files/2025/06/19/FmcX_calP_tUmyhRwfjwUuZRS5xv.jpg",
+    "credit": "渠道资料图 · MINI 5 PRO 礼盒页",
+    "notes": "小满数艺有赞同型号礼盒商品页，裁切礼盒配件陈列局部。礼盒配置口径，随本机配件待确认。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  },
+  "yoose/foil.jpg": {
+    "page": "https://www.goldenpin.org.tw/goldenpin/tw/winners/2707",
+    "url": "https://storage.googleapis.com/goldenpin/award_work_pic/image/15311/detail_image_ec31ad.jpeg",
+    "credit": "参赛资料图 · 金点设计奖",
+    "notes": "有色 MINI 5 PRO 参赛图，展示五刀头近景。",
+    "license": "第三方资料图，未查到明确的开放转载许可或单独授权，仓库 CC BY 4.0 不覆盖这些图片。"
+  }
+}

@@ -51,11 +51,15 @@
 ├── index.html              # 双产品 hub
 ├── laifen-p3/
 │   ├── index.html          # 徕芬 P3 报告
+│   ├── laifen-p3-report.pptx  # 21 页 PPT
 │   ├── CHECKLIST.md        # 拆机观察清单
 │   └── data/               # BOM / FMEA / 预测 / 来源
 ├── yoose-mini5pro/
 │   ├── index.html          # yoose MINI 5 PRO 报告
+│   ├── yoose-mini5pro-report.pptx  # 17 页 PPT
 │   └── data/
+├── assets/                 # 产品图与 sources.json
+├── tools/build_ppt.py      # PPT 生成脚本
 ├── LICENSE
 └── README.md
 ```
@@ -86,3 +90,5 @@ python3 -m http.server 8000
 ## 声明
 
 商标与产品名归徕芬（laifen）与有色（yoose）所有。本仓库为非官方独立研究，不代表厂商立场。文字内容采用 CC BY 4.0 许可，转载请保留来源链接与证据标注。
+
+`assets/` 下的产品图为第三方资料图（官方发布稿/品牌页/设计奖参赛资料），未查到开放转载许可，**CC BY 4.0 不覆盖这些图片**；来源与裁切说明见 `assets/sources.json`。
