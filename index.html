@@ -559,15 +559,38 @@
   <table>
     <thead><tr><th>类型</th><th>风险</th><th>后果 / 早期信号</th><th>RPN</th><th>处置</th></tr></thead>
     <tbody>
-      <tr><td>拆解引入</td><td><b>密封圈错位 / 漏装</b></td><td>IPX7 永久失去；没原厂圈只能算防溅</td><td class="num"><b>200</b></td><td>拆前拍照记位置/线径；复装换新；没有新件就写“不再保证 IPX7”</td></tr>
-      <tr><td>拆解引入</td><td><b>静电损伤 PCBA</b></td><td>当场测不出，几周后隐性失效</td><td class="num"><b>168</b></td><td>防静电手环 + 垫；不摸引脚与金手指</td></tr>
+      <tr><td>拆解引入 D1</td><td><b>密封圈错位 / 漏装</b></td><td>IPX7 永久失去；没原厂圈只能算防溅</td><td class="num"><b>200</b></td><td>拆前拍照记位置/线径；复装换新；没有新件就写“不再保证 IPX7”</td></tr>
+      <tr><td>拆解引入 D7</td><td><b>静电损伤 PCBA</b></td><td>当场测不出，几周后隐性失效</td><td class="num"><b>168</b></td><td>防静电手环 + 垫；不摸引脚与金手指</td></tr>
       <tr><td>使用期</td><td><b>电机弹片疲劳 / 断裂</b></td><td>振幅下降、噪音变大、震感增强，早期只有声音变化</td><td class="num"><b>147</b></td><td>新机先录 1 m dB(A) 与频谱作基线；重摔后必查震感</td></tr>
       <tr><td>使用期</td><td><b>进水 → 内部短路</b></td><td>早期不可见，后期水雾 / 充电异常；电池热失控风险</td><td class="num"><b>144</b></td><td>水洗后甩干竖放 2 h；USB-C 口朝下甩水；每年摸一次压板螺丝</td></tr>
       <tr><td>使用期</td><td><b>刀网磨损 / 变形</b></td><td>拉扯、剃不净、可能刮伤</td><td class="num"><b>144</b></td><td>刀头是耗材：拉扯感或 12–18 个月即换；禁按压网面</td></tr>
-      <tr><td>拆解引入</td><td><b>排线撕裂</b></td><td>压感 / 指示灯 / 电机断联</td><td class="num"><b>140</b></td><td>取 PCBA 前先断排线；撬片插入 1–2 mm 滑行，不单点发力</td></tr>
+      <tr><td>拆解引入 D2</td><td><b>排线撕裂</b></td><td>压感 / 指示灯 / 电机断联</td><td class="num"><b>140</b></td><td>取 PCBA 前先断排线；撬片插入 1–2 mm 滑行，不单点发力</td></tr>
     </tbody>
   </table>
   </div>
+
+  <h3>不可逆动作 D1–D8</h3>
+  <div class="grid2">
+    <div class="card">
+      <h3>拆了就回不去</h3>
+      <ul class="tight">
+        <li><b>D1 拆压板 / 密封圈</b>：硅胶圈永久变形，原厂不单卖 → IPX7 永久失去。</li>
+        <li><b>D2 掀 PCBA</b>：排线在弯折处最脆，拉断即断联。</li>
+        <li><b>D3 拆电池</b>：双面胶固定，按不可拆评估；撬变形即鼓包/起火风险。</li>
+        <li><b>D4 撬 PC 卡扣</b>：塑柱断裂无法修复，502 会发白且更脆。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>碰了就报废</h3>
+      <ul class="tight">
+        <li><b>D5 碰刀网</b>：55 µm 网一按就凹，不可复原；只吹气/软毛刷。</li>
+        <li><b>D6 拆电机 / 磁铁旁用铁工具</b>：预紧力无法复现；强磁吸螺丝、划板、装反极性。</li>
+        <li><b>D7 静电</b>：当场测不出，几周后隐性失效。</li>
+        <li><b>D8 电池区金属工具</b>：刺穿软包 = 热失控，只用塑料撬片。</li>
+      </ul>
+    </div>
+  </div>
+  <p><small>凡胶粘件一律按<b>不可拆</b>评估：电池按双面胶固定、视窗可能胶粘；加热分离视为不可逆，不假设能装回。D 编号与 FMEA 模块 v2 一致。</small></p>
 
   <h3>可换件 vs 必须返修</h3>
   <div class="grid2">
