@@ -554,7 +554,7 @@
   <p style="margin-top:14px">结论措辞：<b>对刀头是易维护设计，对机身内部不是。</b>电池与 PCBA 属于“能拆但官方不供件、且拆开就失去 IPX7”的状态，与主流封闭式小家电同级。</p>
 
   <h3>失效模式：两条寿命线</h3>
-  <p>按 S×O×D 评分（S 严重度、O 发生度按 3 年正常使用、D 可探测度；≥120 为高）。拆解引入的风险单列，不与使用期风险混算。<b>拆解引入项的 200 / 168 / 140 沿用 v1 口径（O 按单次拆装估）；FMEA v2 已改为不可逆动作清单、不再给 RPN。</b>完整 F1–F10 见 <span class="num">data/fmea.csv</span>。</p>
+  <p>按 S×O×D 评分（S 严重度、O 发生度按 3 年正常使用、D 可探测度；≥120 为高）。拆解引入的风险单列，不与使用期风险混算。<b>拆解引入项的 200 / 168 / 140 沿用 v1 口径（O 按单次拆装估）；FMEA v2 已改为不可逆动作清单、不再给 RPN。</b>完整 F1–F10 + D1–D8 见 <span class="num">data/fmea.csv</span>（D3–D8 按 v2 不给 RPN）。</p>
   <div class="tbl-wrap">
   <table>
     <thead><tr><th>类型</th><th>风险</th><th>后果 / 早期信号</th><th>RPN</th><th>处置</th></tr></thead>
@@ -568,6 +568,8 @@
     </tbody>
   </table>
   </div>
+
+  <p><small>其余 7 条使用期失效（S/O/D 见 CSV）：电池衰减 / 鼓包 <b>105</b> · 开关 / 压感 <b>120</b> · USB-C 腐蚀 <b>120</b> · 磁吸退磁 <b>75</b> · 传动轴磨损 <b>120</b> · 触觉马达 <b>27</b> · PID 异常 <b>72</b>。</small></p>
 
   <h3>不可逆动作 D1–D8</h3>
   <div class="grid2">
